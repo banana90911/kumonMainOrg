@@ -18,8 +18,7 @@ trigger LeadTrigger on Lead (after insert) {
                 Subject = '신규 리드 대응',
                 Status = '대기중',
                 Priority = 'Normal',
-                ActivityDate = Date.today(),
-                Is_Lead_Task__c = true
+                ActivityDate = Date.today()
             ));
         }
     }

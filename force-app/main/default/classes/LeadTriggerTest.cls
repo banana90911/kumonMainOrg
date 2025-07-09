@@ -1,11 +1,5 @@
-public with sharing class LeadTriggerTest {
-    public LeadTriggerTest() {
-
-    }
-}@isTest
-public class LeadTriggerTest {
-    @isTest
-    static void testLeadCreatesTasksForTeachers() {
+@isTest public class LeadTriggerTest {
+    @isTest static void testLeadCreatesTasksForTeachers() {
         // 1. 방문교사 프로필 조회
         Profile teacherProfile = [SELECT Id FROM Profile WHERE Name = '방문교사' LIMIT 1];
 
@@ -20,19 +14,19 @@ public class LeadTriggerTest {
             LocaleSidKey = 'ko_KR',
             EmailEncodingKey = 'UTF-8',
             LanguageLocaleKey = 'ko',
-            담당지역__c = '서울'
+            Region_Zone__c = '서울'
         );
         insert teacher;
 
         // 3. 테스트용 리드 생성
         Lead testLead = new Lead(
-            CityName__c = 'Kim', //학부모이름
+            Company = 'Kim', //학부모이름
             Phone = '010-1111-2222', //연락처
             CityName__c = '서울', //지역
             State__c = '강남구', //자치구
             Street__c = '연무장길 11', //상세주소
             Status = '상담대기', //상태
-            Name = '자녀자녀', //자녀1이름
+            LastName = '자녀자녀', //자녀1이름
             ChildBirthDate1__c = '070707', //자녀1생년월일
             InterestedSubject__c = '국어', //관심과목
             MarketingConsent__c = true, //마케팅 동의
@@ -44,7 +38,7 @@ public class LeadTriggerTest {
 
         // 4. Task가 잘 생성됐는지 확인
         List<Task> relatedTasks = [
-            SELECT Id, OwnerId, WhatId, Status, Is_Lead_Task__c
+            SELECT Id, OwnerId, WhatId, Status
             FROM Task
             WHERE WhatId = :testLead.Id
         ];
@@ -52,6 +46,5 @@ public class LeadTriggerTest {
         System.assertEquals(1, relatedTasks.size(), 'Task should be created for teacher');
         System.assertEquals(teacher.Id, relatedTasks[0].OwnerId, 'Task should be assigned to the teacher');
         System.assertEquals('대기중', relatedTasks[0].Status, 'Task status should be 대기중');
-        System.assertEquals(true, relatedTasks[0].Is_Lead_Task__c, 'Task should be marked as lead-related');
     }
 }
