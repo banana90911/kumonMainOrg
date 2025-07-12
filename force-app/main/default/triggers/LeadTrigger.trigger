@@ -4,14 +4,14 @@ trigger LeadTrigger on Lead (after insert) {
 
     // 모든 사용자 WHERE Role = 방문교사
     List<User> allTeachers = [
-        SELECT Id, Name, SubjectInCharge__c, Region_Zone__c
+        SELECT Id, Name, SubjectInCharge__c, Region_Zone__c, HireDate__c
         FROM User
         WHERE UserRole.Name = :TEACHER_ROLE
             AND IsActive = true
-        // Name   SubjectInCharge__c  Region_Zone__c
-        // 김세빈   국어	             강남구
-        // 정시헌   국어;영어;수학         강남구
-        // 정승제   과학                 강남구
+        // Name   SubjectInCharge__c  Region_Zone__c    HireDate__c
+        // 김세빈   국어	             강남구             7/1/2025
+        // 정시헌   국어;영어;수학        강남구             7/1/2024
+        // 정승제   과학                 강남구             7/1/2025
     ];
 
     // 이름 → ID 매핑
@@ -54,10 +54,18 @@ trigger LeadTrigger on Lead (after insert) {
             Integer activeLeadCount = teacherLeadCounts.containsKey(teacher.Id) ? teacherLeadCounts.get(teacher.Id) : 0;
             Decimal loadScore = 1 - Math.min((Decimal)activeLeadCount / 10, 1);
 
+            // 입사일 1년 미만 -> 뉴비 -> 가산점
+            Decimal tenureScore = 0;
+            if (teacher.HireDate__c != null && Date.today().daysBetween(teacher.HireDate__c) <= 365) {
+                tenureScore = 1;
+            } else {
+                tenureScore = 0;
+            }
+
             // Logistic Regression 여기 들어가야함
             
             // 최종 스코어는 위 세 점수에 로지스틱 회귀 기반 가중치를 곱해 합산
-            Decimal score = (0.65 * regionScore) + (0.24 * subjectScore) + (0.11 * loadScore);
+            Decimal score = (0.65 * regionScore) + (0.24 * subjectScore) + (0.6 * loadScore) + (0.5 * tenureScore);
             teacherScores.add(new TeacherScoreWrapper(teacher.Id, score));
         }
 

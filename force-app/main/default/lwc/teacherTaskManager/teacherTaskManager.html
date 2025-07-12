@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="잠재고객 배정 매니저">
+        <template if:true={tasks}>
+            <template for:each={tasks} for:item="task">
+                <div key={task.taskId} class="slds-box slds-m-around_small">
+                    <p><b>학부모 이름:</b> {task.parentName}</p>
+                    <p><b>자녀 이름:</b> {task.childName}</p>
+                    <p><b>상태:</b> {task.status}</p>
+                    <lightning-button label="수락" data-id={task.taskId} onclick={handleAccept}></lightning-button>
+                    <lightning-button label="거절" data-id={task.taskId} onclick={handleReject}></lightning-button>
+                </div>
+            </template>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>
