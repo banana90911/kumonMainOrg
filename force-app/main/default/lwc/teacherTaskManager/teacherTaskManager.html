@@ -1,11 +1,13 @@
 <template>
-    <lightning-card title="잠재고객 배정 매니저">
+    <lightning-card title="잠재고객 배정 리스트">
         <template if:true={tasks}>
             <template for:each={tasks} for:item="task">
                 <div key={task.taskId} class="slds-box slds-m-around_small">
                     <p><b>학부모 이름:</b> {task.parentName}</p>
                     <p><b>자녀 이름:</b> {task.childName}</p>
-                    <p><b>상태:</b> {task.status}</p>
+                    <p>
+                        <a href={task.leadUrl} target="_blank">🔗 리드 보기</a>
+                    </p>
                     <lightning-button label="수락" data-id={task.taskId} onclick={handleAccept}></lightning-button>
                     <lightning-button label="거절" data-id={task.taskId} onclick={handleReject}></lightning-button>
                 </div>

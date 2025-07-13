@@ -1,4 +1,9 @@
 trigger LeadTrigger on Lead (after insert) {
+    // 잠재고객 레코드가 생성될 때마다 
+    // >>> 방문교사 후보들을 불러와서 
+    // >>> 점수 계산해서 
+    // >>> 점수대로 Task 생성 및 할당하는 트리거
+
     List<Task> tasksToInsert = new List<Task>();
     String TEACHER_ROLE = '방문교사';
 
@@ -14,13 +19,13 @@ trigger LeadTrigger on Lead (after insert) {
         // 정승제   과학                 강남구             7/1/2025
     ];
 
-    // 이름 → ID 매핑
+    // 이름 -> ID 매핑 (나중에 ID 말고 이름 쓸라고)
     Map<String, Id> teacherNameToId = new Map<String, Id>();
     for (User u : allTeachers) {
         teacherNameToId.put(u.Name, u.Id);
     }
 
-
+    // 교사별 현재 담당 잠재고객 수 계산하여 저장
     Map<Id, Integer> teacherLeadCounts = new Map<Id, Integer>();
     for (AggregateResult ar : [
         SELECT Teacher__c, COUNT(Id) total
@@ -34,8 +39,6 @@ trigger LeadTrigger on Lead (after insert) {
             teacherLeadCounts.put(teacherId, (Integer)ar.get('total'));
         }
     }
-
-
 
     // for each 새로 생성된 잠재고객 레코드
     for (Lead lead : Trigger.new) {
@@ -81,7 +84,6 @@ trigger LeadTrigger on Lead (after insert) {
                 Subject = '신규 잠재고객 대응',
                 Status = '대기중',
                 Priority = 'Normal',
-                // 한시간 간격 hoursOffset = 한시간
                 ActivityDate = System.now().date()
             );
             tasksToInsert.add(t);
@@ -89,6 +91,7 @@ trigger LeadTrigger on Lead (after insert) {
         }
     }
 
+    // Task Insert
     if (!tasksToInsert.isEmpty()) {
         try {
             // 한 번에 bulk insert (성능)

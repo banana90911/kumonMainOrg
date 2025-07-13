@@ -3,6 +3,7 @@ public with sharing class VisitorTaskController {
     // 방문교사의 미처리 Task 목록 조회 + 관련 리드 정보 포함
     @AuraEnabled(cacheable=true)
     public static List<VisitorTaskWrapper> getMyPendingTasks() {
+        // 대기중 상태이고 생성된지 2일이내인 Task
         List<Task> taskList = [
             SELECT Id, WhoId, Status
             FROM Task
@@ -11,24 +12,26 @@ public with sharing class VisitorTaskController {
               AND CreatedDate = LAST_N_DAYS:2
         ];
 
+        // Task에서 잠재고객 ID 추출
         Set<Id> leadIds = new Set<Id>();
         for (Task t : taskList) {
             if (t.WhoId != null) {
                 leadIds.add(t.WhoId);
             }
         }
-
+        
+        // 잠재고객의 학부모, 자녀 조회
         Map<Id, Lead> leadMap = new Map<Id, Lead>(
             [SELECT Id, Company, LastName FROM Lead WHERE Id IN :leadIds]
         );
 
+        // Task + Lead 정보를 VisitorTaskWrapper로 포장해 리턴
         List<VisitorTaskWrapper> results = new List<VisitorTaskWrapper>();
-
         for (Task t : taskList) {
             Lead l = leadMap.get(t.WhoId);
             results.add(new VisitorTaskWrapper(
                 t.Id,
-                t.Status,
+                l != null ? l.Id : null,
                 l != null ? l.Company : '',
                 l != null ? l.LastName : ''
             ));
@@ -45,14 +48,14 @@ public with sharing class VisitorTaskController {
 
         // 리드 담당자 설정
         Lead lead = [SELECT Id FROM Lead WHERE Id = :leadId];
-        lead.Teacher__c = UserInfo.getUserId(); // 필드가 Lookup(User)일 경우
+        lead.Teacher__c = UserInfo.getUserId();
         update lead;
 
-        // 본인 Task → 수락됨
+        // 본인 Task -> 수락됨
         task.Status = '수락됨';
         update task;
 
-        // 다른 Task → 수락불가
+        // 다른 Task 상태 업데이트: 놓침
         List<Task> otherTasks = [
             SELECT Id FROM Task
             WHERE WhoId = :leadId
@@ -60,7 +63,7 @@ public with sharing class VisitorTaskController {
               AND Status = '대기중'
         ];
         for (Task t : otherTasks) {
-            t.Status = '수락불가';
+            t.Status = '놓침';
         }
         update otherTasks;
     }
@@ -76,13 +79,13 @@ public with sharing class VisitorTaskController {
     // LWC에 전달할 Task+Lead 정보 묶음
     public class VisitorTaskWrapper {
         @AuraEnabled public Id taskId;
-        @AuraEnabled public String status;
+        @AuraEnabled public Id leadId;
         @AuraEnabled public String parentName;
         @AuraEnabled public String childName;
 
-        public VisitorTaskWrapper(Id taskId, String status, String parentName, String childName) {
+        public VisitorTaskWrapper(Id taskId, Id leadId, String parentName, String childName) {
             this.taskId = taskId;
-            this.status = status;
+            this.leadId = leadId;
             this.parentName = parentName;
             this.childName = childName;
         }
