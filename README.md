@@ -32,12 +32,10 @@
 ## 3️⃣ 프로젝트 프로세스
 
 
-🖼 **프로세스 다이어그램:**
-AS-IS
+🖼 **프로세스 다이어그램: AS-IS**
 <img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/fc102a5f-70dc-44f4-a998-f9ab28d4f7e4" />
 
-🖼 **프로세스 다이어그램:**
-TO-BE
+**프로세스 다이어그램: TO-BE**
 <img width="14862" height="8890" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
 ---
 
