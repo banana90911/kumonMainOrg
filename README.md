@@ -36,6 +36,7 @@
 
 🖼 **프로세스 다이어그램: TO-BE**
 <img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
+
 ---
 
 ## 4️⃣ ERD (Entity-Relationship Diagram)
