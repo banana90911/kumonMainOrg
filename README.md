@@ -28,3 +28,17 @@
 | 김성준 | Developer | [GitHub](https://github.com/) |
 
 ---
+
+## 3️⃣ 프로젝트 프로세스
+
+
+🖼 **프로세스 다이어그램:**
+<img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/28526f47-52f4-4165-a1a5-3165892c1d5f" />
+---
+
+## 4️⃣ ERD (Entity-Relationship Diagram)
+
+📌 **ERD 설명:** 데이터베이스 구조 및 관계 설명
+
+🖼 **ERD 이미지:**
+<br>
