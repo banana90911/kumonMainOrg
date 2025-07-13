@@ -33,7 +33,8 @@
 
 
 🖼 **프로세스 다이어그램:**
-<img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/28526f47-52f4-4165-a1a5-3165892c1d5f" />
+AS-IS
+<img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/fc102a5f-70dc-44f4-a998-f9ab28d4f7e4" />
 ---
 
 ## 4️⃣ ERD (Entity-Relationship Diagram)
