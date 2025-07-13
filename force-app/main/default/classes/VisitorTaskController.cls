@@ -47,8 +47,9 @@ public with sharing class VisitorTaskController {
         Id leadId = task.WhoId;
 
         // 리드 담당자 설정
+        User currentUser = [SELECT Id, LastName FROM User WHERE Id = :UserInfo.getUserId() LIMIT 1];
         Lead lead = [SELECT Id FROM Lead WHERE Id = :leadId];
-        lead.Teacher__c = UserInfo.getUserId();
+        lead.Teacher__c = currentUser.LastName;
         update lead;
 
         // 본인 Task -> 수락됨
