@@ -1,6 +1,6 @@
 # SalesForce CRM101 Project(커몬학습)
 
-![Kumon_Brand_Logo](https://raw.githubusercontent.com/banana90911/-/KumonProject/Brand_Logo.png)
+![Kumon_Brand_Logo](https://github.com/user-attachments/assets/bc36cd29-e19e-45ff-b6fc-ac44f2379bc9)
 
 
 > **한 줄 소개:** '구몬학습'을 모티브로 세일즈포스 플랫폼을 구축하는 프로젝트로 기업리서치 및 비즈니스 프로세스 분석을 시작으로
