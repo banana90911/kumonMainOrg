@@ -1,10 +1,10 @@
-# 🚀 SalesForce Project(Dream Order)
+# SalesForce CRM101 Project(커몬학습)
 
 ![imageremovebgpreview_12](https://github.com/user-attachments/assets/bfd5fd03-b644-4e30-b2fa-762c4857d98f)
 
 
-> **한 줄 소개:** Dream Order의 영업 편리를 위한 세일즈포스를 이용한 솔루션 제공
-> 프로젝트에 대한 간단한 설명을 작성하세요.
+> **한 줄 소개:** '구몬학습'을 모티브로 세일즈포스 플랫폼을 구축하는 프로젝트로 기업리서치 및 비즈니스 프로세스 분석을 시작으로
+> 도출한 문제점들을 해결하기 위한 솔루션(업무 자동화, 데이터 통합, 커뮤니케이션 채널 일원화 등)을 설계하고 구현하는 프로젝트입니다.
 
 ---
 
