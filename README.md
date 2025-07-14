@@ -1,6 +1,6 @@
 # SalesForce CRM101 Project(커몬학습)
 
-<img width="419" height="417" alt="Image" src="https://github.com/user-attachments/assets/f6987ad9-031a-45fb-b885-fd79d7239cc2" />
+<img width="1280" height="406" alt="Image" src="https://github.com/user-attachments/assets/20b06872-54be-44a7-ae36-4c5f0d9085c1" />
 
 
 > **한 줄 소개:** '구몬학습'을 모티브로 세일즈포스 플랫폼을 구축하는 프로젝트로 기업리서치 및 비즈니스 프로세스 분석을 시작으로
