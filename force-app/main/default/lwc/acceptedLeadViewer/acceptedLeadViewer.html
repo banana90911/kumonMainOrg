@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="내가 수락한 리드">
+        <template if:true={leads}>
+            <template for:each={leads} for:item="lead">
+                <div key={lead.taskId} class="slds-box slds-m-around_small">
+                    <p><b>학부모:</b> {lead.parentName}</p>
+                    <p><b>자녀:</b> {lead.childName}</p>
+                    <p><b>생년월일:</b> {lead.childBirthdate}</p>
+                    <p><b>관심과목:</b> {lead.subject}</p>
+                    <p><b>주소:</b> {lead.address}</p>
+                    <p>
+                        <a href={lead.telUrl}>
+                            <lightning-button label="📞 전화걸기"></lightning-button>
+                        </a>
+                    </p>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>
