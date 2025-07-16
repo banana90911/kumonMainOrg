@@ -1,0 +1,73 @@
+<template>
+
+    <div class="slds-card"
+        style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 0;">
+
+        <!-- 오렌지 헤더 -->
+        <div style="background-color: #f0d2eb; height: 70px;"></div>
+
+        <!-- 이미지 + 텍스트 가로 정렬 -->
+        <div class="slds-grid slds-align_absolute-center" style="margin-top: -45px; padding: 1.5rem;">
+
+            <!-- 이미지 영역 -->
+            <div class="slds-col" style="flex: 0 0 auto; margin-right: 2rem;">
+                <div
+                    style="width: 105px; height: 105px; border-radius: 50%; border: 4px solid white; overflow: hidden;">
+                    <img src={familyImageUrl} alt="Profile" style="width: 100%; height: 100%;" />
+                </div>
+            </div>
+
+            <!-- 텍스트 영역 (너비 자동) -->
+            <div class="slds-col"
+                style="flex: 1; display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
+                <h2 style="font-size: 1.5rem; font-weight: 600; color: #1E293B; letter-spacing: 1px;
+                font-family: Pretendard / Noto Sans KR;">
+                    <span>{accountName}</span>
+                    <span style="font-size: 1rem; font-weight: 400; margin-left: 0.3rem; color: #4b5563;">학부모</span>
+                </h2>
+                <p class="slds-text-body_small slds-text-color_weak" style="margin-bottom: 0.5rem;">
+                    {cityName}, {state}
+                </p>
+                <p class="slds-text-body_small slds-text-color_weak">상세 주소: {street}</p>
+                <p class="slds-text-body_small slds-text-color_weak">연락처: {phoneNumber}</p>
+            </div>
+
+        </div>
+
+        <!-- 자녀 정보 헤더 -->
+        <h3 class="slds-text-heading_small slds-m-bottom_small" style="margin-left: 1rem; color: #374151;">
+            👶 자녀 정보
+        </h3>
+
+        <!-- 자녀 카드 리스트 -->
+        <div class="slds-grid slds-wrap slds-gutters slds-p-horizontal_medium">
+            <template for:each={children} for:item="child">
+                <div key={child.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <div class="slds-card slds-p-around_medium slds-m-bottom_medium"
+                        style="border-radius: 0.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #E5E7EB;">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <img src={babyImageUrl} alt="Child"
+                                    style="width: 48px; height: 48px; border-radius: 50%;" />
+                            </div>
+                            <div class="slds-media__body">
+                                <p class="child-name-link" data-id={child.Id} onclick={handleChildClick}>
+                                    {child.ChildName__c}
+                                </p>
+
+                                <p class="slds-text-body_small slds-text-color_weak">
+                                    생년월일 <br>
+                                    <lightning-formatted-date-time value={child.Birthdate} year="numeric"
+                                        month="2-digit" day="2-digit">
+                                    </lightning-formatted-date-time>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+
+    </div>
+</template>

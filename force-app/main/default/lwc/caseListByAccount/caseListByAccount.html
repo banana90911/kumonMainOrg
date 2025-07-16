@@ -1,0 +1,20 @@
+<template>
+    <div class="case-container">
+        <div class="section-header">
+            <span class="section-emoji">🗃️</span>
+            <h3 class="section-title">문의 내역 히스토리</h3>
+        </div>
+
+        <div class="case-card-wrapper">
+            <template for:each={parentCases} for:item="c">
+                <div key={c.Id} class="case-card" data-id={c.Id} onclick={handleCaseClick}>
+                    <div class="case-icon">📝</div>
+                    <div class="case-details">
+                        <p class="case-subject">{c.Subject} <span class="case-type">({c.Type})</span></p>
+                        <p class="case-desc">{c.Description}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

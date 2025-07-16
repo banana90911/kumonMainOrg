@@ -1,0 +1,11 @@
+.child-name-link {
+    color: #1E3A8A;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.child-name-link:hover {
+    text-decoration: underline;
+}
