@@ -10,25 +10,30 @@
 
 ---
 
-## **1️⃣ 프로젝트 개요**
+## 1️⃣ 프로젝트 개요
 
 ### 🚩 기획 배경 ###
 
 어찌저찌
-문제점들
+- 문제점들
 
 ### 🚩 프로젝트 목표 ###
 이러한 문제점들을 보완하기 위해...
-- ✅ **고객 여정 전체 구조화로 체계적인 고객 관리**  
-- ✅ **아동에 따른 과정 진행 확인으로 인한 전반적인 학습 이력 및 교사 일정 관리 가능**
-- ✅ **고객 문의 유형별 이력 관리 및 문의 유형별 유동적인 CS 문의 관리**
+- 고객 여정 전체 구조화로 체계적인 고객 관리
+- 아동에 따른 과정 진행 확인으로 인한 전반적인 학습 이력 및 교사 일정 관리 가능
+- 고객 문의 유형별 이력 관리 및 문의 유형별 유동적인 CS 문의 관리
+AS-IS, TO-BE 여기에 넣어야 하나?
 
 ### 🚩 프로젝트 확장성 ###
+고객만족도 아래와 같은 확장성을 고려할 수 있다.
+- 1
+- 2
+- 3
 
 ---
 
-##  **2️⃣ 팀원 소개**
-### 👨‍💻 **팀원 및 역할**
+##  2️⃣ 팀원 소개
+### 🚩 팀원 및 역할 ###
 | **이름** | **역할** | **GitHub** |
 |--------|---------|------------|
 | 박예진 | Admin (PM) | [GitHub](https://github.com/) |
@@ -40,10 +45,10 @@
 ---
 
 ## 3️⃣ 프로젝트 프로세스
-🖼 **프로세스 다이어그램:**<br>
+### 🖼 프로세스 다이어그램: ###
 <img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
 
-🖼 **페르소나별 AS-IS/TO-BE:**<br>
+### 🖼 페르소나별 AS-IS/TO-BE: ###
 **CS:**<br>
 <img width="832" height="358" alt="Image" src="https://github.com/user-attachments/assets/50a8392b-3ff1-4456-bb39-c3b825f0dee2" />
 
@@ -57,7 +62,7 @@
 
 ## 4️⃣ ERD (Entity-Relationship Diagram)
 
-📌 **ERD 설명:** 데이터베이스 구조 및 관계 설명
+🚩 **ERD 설명:** 데이터베이스 구조 및 관계 설명
 
 🖼 **ERD 이미지:**
 <br>
@@ -67,21 +72,19 @@
 
 ## 5️⃣ 요구사항 명세서
 
-📌 **기능별 요구사항 정리**
-<br>
+### 🚩 기능별 요구사항 정리 ###
 이미지
 
 ---
 
 ## 6️⃣ 오브젝트 정의
-
-### 📌 사용한 오브젝트 이름 및 설명
+### 🚩 사용한 오브젝트 이름 및 설명
 이미지
 
 ---
 
 ## 7️⃣ Pain Point별 Solution
-## 1. 방문 교사/지사의 수작업 고객 관리
+### 🚩1. 방문 교사/지사의 수작업 고객 관리
 ### 기대효과:
 - 고객 여정 전체 구조화로 체계적인 고객 관리
 -  1. 신규 인입시, 상담사 자동 배정
@@ -90,7 +93,7 @@
 
 이미지
 
-## 2. 분산된 방문교사의 일정 및 학습 관리
+### 🚩2. 분산된 방문교사의 일정 및 학습 관리
 ### 기대효과:
 - 아동에 따른 과정 진행 확인으로 인한 전반적인 학습 이력 및 교사 일정 관리 가능
 -  1. 학습 이력 관리 + 학습 이력에 따른 Agentforce 줄거리 요약 기능
@@ -99,7 +102,7 @@
 
 이미지
 
-## 3. 부서 간 협업 부재
+### 🚩3. 부서 간 협업 부재
 ### 기대효과:
 - 고객 문의 유형별 이력 관리 및 문의 유형별 유동적인 CS 문의 관리
 -  1. 챗봇 활용하여 일반문의 관리
@@ -110,22 +113,22 @@
 
 ---
 
-## **8️⃣ 기술 스택**
-📌 **프로젝트에서 사용된 주요 기술 스택**
+## 8️⃣ 기술 스택 세부 명세
+### 📌 프로젝트에서 사용된 주요 기술 스택 ###
 
-### **💻 Backend**
+### 💻 Backend ###
 - ![Apex](https://img.shields.io/badge/Apex-0055CC?style=flat&logo=salesforce&logoColor=white)
 - ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
 - ![SFDX](https://img.shields.io/badge/SFDX-00A1E0?style=flat&logo=salesforce&logoColor=white)
 
-### **🎨 Frontend**
+### 🎨 Frontend ###
 - ![LWC](https://img.shields.io/badge/LWC-0070D2?style=flat&logo=salesforce&logoColor=white)
 - ![html](https://img.shields.io/badge/html-3366CC?logo=htmx&logoColor=white&labelColor=3366CC)
 
-### **🗄 Database**
+### 🗄 Database ###
 - ![SOQL](https://img.shields.io/badge/SOQL-00A1E0?style=flat&logo=salesforce&logoColor=white)
 
-### **🛠 협업 툴**
+### 🛠 협업 툴 ###
 - ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 - ![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat&logo=jira&logoColor=white)
 - ![Notion](https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white)
