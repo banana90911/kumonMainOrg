@@ -37,7 +37,7 @@
 
 **CS:**
 
-<img width="723" height="314" alt="Image" src="https://github.com/user-attachments/assets/3992066c-1a7f-4844-a1e1-236620f40767" />
+<img width="832" height="358" alt="Image" src="https://github.com/user-attachments/assets/50a8392b-3ff1-4456-bb39-c3b825f0dee2" />
 
 **방문교사:**
 
