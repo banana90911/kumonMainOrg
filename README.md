@@ -45,4 +45,4 @@
 
 🖼 **ERD 이미지:**
 <br>
-<img width="2199" height="1911" alt="Image" src="https://github.com/user-attachments/assets/e424d6e4-9393-4b23-9ef9-d80651e851ad" />
+<img width="1431" height="1634" alt="Image" src="https://github.com/user-attachments/assets/a144f23c-eccd-43a8-9e59-68a7373e0d2f" />
