@@ -30,12 +30,16 @@
 ---
 
 ## 3️⃣ 프로젝트 프로세스
-🖼 **프로세스 다이어그램: AS-IS**
-<img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/fc102a5f-70dc-44f4-a998-f9ab28d4f7e4" />
-
-
-🖼 **프로세스 다이어그램: TO-BE**
+🖼 **프로세스 다이어그램:**
 <img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
+
+🖼 **페르소나별 AS-IS/TO-BE:**
+CS:
+<img width="16384" height="10236" alt="Image" src="https://github.com/user-attachments/assets/718c0719-1764-47a8-bdee-4c2bd2bc4a66" />
+방문교사:
+<img width="16384" height="10236" alt="Image" src="https://github.com/user-attachments/assets/0d040d17-8fbb-4e5c-ac1e-92ed6fd6b921" />
+영업 지사 담당자:
+<img width="16384" height="10236" alt="Image" src="https://github.com/user-attachments/assets/c1b7cb7e-edb4-4970-9683-b64021903b99" />
 
 ---
 
