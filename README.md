@@ -34,12 +34,14 @@
 <img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
 
 🖼 **페르소나별 AS-IS/TO-BE:**
-CS:
-<img width="16384" height="10236" alt="Image" src="https://github.com/user-attachments/assets/718c0719-1764-47a8-bdee-4c2bd2bc4a66" />
-방문교사:
-<img width="16384" height="10236" alt="Image" src="https://github.com/user-attachments/assets/0d040d17-8fbb-4e5c-ac1e-92ed6fd6b921" />
-영업 지사 담당자:
-<img width="16384" height="10236" alt="Image" src="https://github.com/user-attachments/assets/c1b7cb7e-edb4-4970-9683-b64021903b99" />
+**CS:**
+<img width="831" height="362" alt="Image" src="https://github.com/user-attachments/assets/0bd981d0-1020-48d9-a90b-b7bbf9583e16" />
+
+**방문교사:**
+<img width="850" height="360" alt="Image" src="https://github.com/user-attachments/assets/550d42e1-45b1-4fc3-8559-e083eda57c4a" />
+
+**영업 지사 담당자:**
+<img width="843" height="362" alt="Image" src="https://github.com/user-attachments/assets/e95efe79-3a62-4774-8460-735dda2573cd" />
 
 ---
 
