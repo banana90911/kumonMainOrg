@@ -34,6 +34,7 @@
 <img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
 
 🖼 **페르소나별 AS-IS/TO-BE:**
+
 **CS:**
 <img width="831" height="362" alt="Image" src="https://github.com/user-attachments/assets/0bd981d0-1020-48d9-a90b-b7bbf9583e16" />
 
