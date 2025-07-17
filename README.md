@@ -110,6 +110,7 @@
 
 ### **🎨 Frontend**
 - ![LWC](https://img.shields.io/badge/LWC-0070D2?style=flat&logo=salesforce&logoColor=white)
+- ![html](https://img.shields.io/badge/html-3366CC?logo=htmx&logoColor=white&labelColor=3366CC)
 
 ### **🗄 Database**
 - ![SOQL](https://img.shields.io/badge/SOQL-00A1E0?style=flat&logo=salesforce&logoColor=white)
@@ -117,3 +118,5 @@
 ### **🛠 협업 툴**
 - ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 - ![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat&logo=jira&logoColor=white)
+- ![Notion](https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white)
+- ![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&labelColor=F24E1E)
