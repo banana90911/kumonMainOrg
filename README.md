@@ -70,3 +70,50 @@
 
 ---
 
+## 7️⃣ Pain Point별 Solution
+## 1. 방문 교사/지사의 수작업 고객 관리
+### 기대효과:
+- 고객 여정 전체 구조화로 체계적인 고객 관리
+-  1. 신규 인입시, 상담사 자동 배정
+-  2. 방문교사의 일관되고 체계적인 학습 설명 및 금액 안내
+<br>
+
+이미지
+
+## 2. 분산된 방문교사의 일정 및 학습 관리
+### 기대효과:
+- 아동에 따른 과정 진행 확인으로 인한 전반적인 학습 이력 및 교사 일정 관리 가능
+-  1. 학습 이력 관리 + 학습 이력에 따른 Agentforce 줄거리 요약 기능
+-  2. 방문교사 손쉬운 일정 관리
+<br>
+
+이미지
+
+## 3. 부서 간 협업 부재
+### 기대효과:
+- 고객 문의 유형별 이력 관리 및 문의 유형별 유동적인 CS 문의 관리
+-  1. 챗봇 활용하여 일반문의 관리
+-  2. 케이스 이력 관리 및 클레임 문의 CS 담당자가 Web-to-case 로 문의 처리 및 영업지사에게 Case 할당하여 Case 해결 (Customer 360)
+<br>
+
+이미지
+
+---
+
+## **8️⃣ 기술 스택**
+📌 **프로젝트에서 사용된 주요 기술 스택**
+
+### **💻 Backend**
+- ![Apex](https://img.shields.io/badge/Apex-0055CC?style=flat&logo=salesforce&logoColor=white)
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
+- ![SFDX](https://img.shields.io/badge/SFDX-00A1E0?style=flat&logo=salesforce&logoColor=white)
+
+### **🎨 Frontend**
+- ![LWC](https://img.shields.io/badge/LWC-0070D2?style=flat&logo=salesforce&logoColor=white)
+
+### **🗄 Database**
+- ![SOQL](https://img.shields.io/badge/SOQL-00A1E0?style=flat&logo=salesforce&logoColor=white)
+
+### **🛠 협업 툴**
+- ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
+- ![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat&logo=jira&logoColor=white)
