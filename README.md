@@ -30,21 +30,17 @@
 ---
 
 ## 3️⃣ 프로젝트 프로세스
-🖼 **프로세스 다이어그램:**
+🖼 **프로세스 다이어그램:**<br>
 <img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
 
-🖼 **페르소나별 AS-IS/TO-BE:**
-
-**CS:**
-
+🖼 **페르소나별 AS-IS/TO-BE:**<br>
+**CS:**<br>
 <img width="832" height="358" alt="Image" src="https://github.com/user-attachments/assets/50a8392b-3ff1-4456-bb39-c3b825f0dee2" />
 
-**방문교사:**
-
+**방문교사:**<br>
 <img width="833" height="361" alt="Image" src="https://github.com/user-attachments/assets/2dff2552-3da8-4575-a259-ffec2dad3f5a" />
 
-**영업 지사 담당자:**
-
+**영업 지사 담당자:**<br>
 <img width="833" height="361" alt="Image" src="https://github.com/user-attachments/assets/0d19bfaa-f8f5-4dd5-9d60-6ebd584df33c" />
 
 ---
@@ -63,6 +59,14 @@
 
 📌 **기능별 요구사항 정리**
 <br>
-![image](https://github.com/user-attachments/assets/2a99ac14-1e43-44bf-ab5b-ab2e9632452a)
+이미지
 
 ---
+
+## 6️⃣ 오브젝트 정의
+
+### 📌 사용한 오브젝트 이름 및 설명
+이미지
+
+---
+
