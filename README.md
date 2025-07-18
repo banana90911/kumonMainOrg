@@ -79,7 +79,7 @@
 
 ## 6️⃣ 오브젝트 정의
 ### 🚩 사용한 오브젝트 이름 및 설명
-이미지
+<img width="937" height="328" alt="Image" src="https://github.com/user-attachments/assets/a2353f62-21e6-4900-97b9-f624e460bc1d" />
 
 ---
 
