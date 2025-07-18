@@ -26,13 +26,13 @@
 
 #### 🖼 페르소나별 AS-IS/TO-BE: 
 **CS:**<br>
-<img width="832" height="358" alt="Image" src="https://github.com/user-attachments/assets/50a8392b-3ff1-4456-bb39-c3b825f0dee2" />
+<img width="1148" height="500" alt="Image" src="https://github.com/user-attachments/assets/829d27f1-3b01-4267-a699-8a4230fab990" />
 
 **방문교사:**<br>
-<img width="833" height="361" alt="Image" src="https://github.com/user-attachments/assets/2dff2552-3da8-4575-a259-ffec2dad3f5a" />
+<img width="1146" height="500" alt="Image" src="https://github.com/user-attachments/assets/9cf998e3-2967-4374-981c-765059959537" />
 
 **영업 지사 담당자:**<br>
-<img width="833" height="361" alt="Image" src="https://github.com/user-attachments/assets/0d19bfaa-f8f5-4dd5-9d60-6ebd584df33c" />
+<img width="1148" height="499" alt="Image" src="https://github.com/user-attachments/assets/67aa8026-a2c5-465c-8aa8-7f0d8a2b577b" />
 
 ### 🚩 프로젝트 확장성 
 이번 프로젝트는 고객 만족도 향상을 기반으로 데이터 통합 이후 다음과 같은 확장 가능성을 염두에 두고 있습니다.
