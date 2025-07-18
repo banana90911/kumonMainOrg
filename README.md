@@ -133,3 +133,4 @@
 - ![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat&logo=jira&logoColor=white)
 - ![Notion](https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white)
 - ![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&labelColor=F24E1E)
+- ![Sheets](https://img.shields.io/badge/Sheets-34A853?logo=googlesheets&logoColor=white&labelColor=34A853)
