@@ -68,7 +68,7 @@ trigger LeadTrigger on Lead (after insert) {
             // Logistic Regression 여기 들어가야함
             
             // 최종 스코어는 위 세 점수에 로지스틱 회귀 기반 가중치를 곱해 합산
-            Decimal score = (0.65 * regionScore) + (0.24 * subjectScore) + (0.6 * loadScore) + (0.5 * tenureScore);
+            Decimal score = (0.65 * regionScore) + (0.24 * subjectScore) + (0.06 * loadScore) + (0.05 * tenureScore);
             teacherScores.add(new TeacherScoreWrapper(teacher.Id, score));
         }
 
