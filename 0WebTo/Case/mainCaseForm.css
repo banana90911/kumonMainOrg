@@ -1,0 +1,88 @@
+/* ------------------------ */
+/* 탭 메뉴 영역           */
+/* ------------------------ */
+.tabs {
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.tab {
+  color: gray;
+  text-decoration: none;
+}
+
+.tab.active {
+  color: black;
+  font-weight: bold;
+}
+
+/* ------------------------ */
+/* 제목 영역              */
+/* ------------------------ */
+h2 {
+  border-bottom: 2px solid black;
+  padding-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 24px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  padding-left: 4px;
+}
+
+/* ------------------------ */
+/* 아코디언 전체 영역     */
+/* ------------------------ */
+.accordion {
+  margin-bottom: 48px;
+}
+
+/* 각 질문 박스 */
+.accordion-item {
+  border-top: 1px solid #ddd;
+}
+
+.accordion .accordion-item:first-child {
+  border-top: none;
+}
+
+/* 질문 헤더 */
+.accordion-header {
+  padding: 18px 16px;
+  cursor: pointer;
+  background-color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 답변 본문 */
+.accordion-body {
+  padding: 16px;
+  display: none;
+  background-color: #fafafa;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.accordion-item.active .accordion-body {
+  display: block;
+}
+
+/* 아이콘 회전 애니메이션 */
+.accordion-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}

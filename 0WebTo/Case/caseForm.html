@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고객 서비스 요청</title>
+    <link rel="stylesheet" href="caseForm.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <form
+        id="contactForm"
+        action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgK000005xa1N"
+        method="POST"
+      >
+        <div class="form-section">
+          <div class="section-title">상담정보 입력</div>
+
+          학부모 이름:<input
+            id="00NgK000016nB4n"
+            maxlength="8"
+            name="00NgK000016nB4n"
+            size="20"
+            type="text"
+          /><br />
+
+          <div class="form-section">
+            <label for="phone">휴대폰 번호</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="휴대폰 번호 입력"
+              required
+            />
+          </div>
+
+          <div class="form-section">
+            <label for="email">이메일</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="이메일 아이디"
+              required
+            />
+          </div>
+
+          <div class="section-title">상담 내용</div>
+
+          <div class="form-section">
+            <label for="type">문제 유형</label>
+            <select id="type" name="type" required>
+              <option value="">문의 유형을 선택해주세요.</option>
+              <option value="학습/평가">학습/평가</option>
+              <option value="태블릿">태블릿</option>
+              <option value="결제">결제</option>
+              <option value="시스템장애">시스템장애</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <label for="subject">제목</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="제목 입력"
+              required
+            />
+          </div>
+
+          <div class="form-section">
+            <label for="description">내용</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="접수된 문의는 순차적으로 답변해 드리고 있습니다. 정확한 답변을 위해 문의 내용을 상세히 작성해 주세요. 필요 시, 문의하신 내용에 대해 전화로 연락드릴 수 있습니다. - 운영시간: 오전 9시 ~ 오후 6시 (평일)"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="orgid" value="00DgK000005xa1N" />
+          <input
+            type="hidden"
+            name="retURL"
+            value="https://common-sooty.vercel.app/webtocase/caseFormSuccess"
+          />
+          <input type="hidden" name="external" value="1" />
+            <button type="submit" class="submit-btn">작성하기</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

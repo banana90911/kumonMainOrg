@@ -1,0 +1,140 @@
+/* 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 40px 20px;
+  color: #1a1a1a;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #ddd;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333; /* 레이블 텍스트 색상 */
+  margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  color: #333; /* 텍스트 색상 */
+  background-color: #fff; /* 입력창 배경색 */
+}
+
+/* 추가적인 스타일 */
+input[type="file"] {
+  display: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cancel-btn {
+  background-color: #ddd;
+  border: none;
+}
+
+.cancel-btn:hover {
+  background-color: #bbb;
+}
+
+.submit-btn {
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 텍스트영역 디자인 */
+textarea {
+  background-color: #fafafa; /* 내용 텍스트박스 배경 */
+  color: #333; /* 텍스트 색상 */
+}
+
+textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #888; /* 플레이스홀더 텍스트 색상 */
+  font-style: normal; /* 기울임꼴 제거 */
+}
+
+/* 추가로 이메일과 같은 텍스트 색상 수정 */
+input[type="email"],
+input[type="text"] {
+  color: #333; /* 텍스트 입력색 */
+  background-color: white; /* 배경색을 흰색으로 설정 */
+}
