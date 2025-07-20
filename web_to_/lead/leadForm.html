@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>커먼학습 상담신청 폼</title>
+    <link rel="stylesheet" href="leadForm.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>무료상담 신청</h1>
+      <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000005xa1N"
+        method="POST"
+      >
+        <input type="hidden" name="oid" value="00DgK000005xa1N" />
+        <input
+          type="hidden"
+          name="retURL"
+          value="https://common-sooty.vercel.app/webtolead/leadFormSuccess"
+        />
+        <input type="hidden" name="oid" value="00DgK000005xa1N" />
+
+        <!-- 신청정보 입력 -->
+        <div class="section-title">신청정보 입력</div>
+        <div class="form-group">
+          <label for="company"
+            >학부모 이름<span class="required">*</span></label
+          >
+          <input
+            id="company"
+            type="text"
+            name="company"
+            maxlength="8"
+            placeholder="학부모 이름 입력"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처<span class="required">*</span></label>
+          <input
+            id="phone"
+            type="text"
+            name="phone"
+            maxlength="15"
+            placeholder="'-' 없이 숫자만 입력 예)01012345678"
+            required
+          />
+        </div>
+
+        <!-- 주소정보 입력 -->
+        <div class="form-group">
+          <label>주소<span class="required">*</span></label>
+          <div class="address-inline">
+            <label for="00NgK000015uJsb">지역</label>
+            <select id="region" name="00NgK000015uJsb" title="지역" required>
+              <option value="">--선택--</option>
+              <option value="서울">서울</option>
+              <option value="부산">부산</option>
+              <option value="대구">대구</option>
+              <option value="인천">인천</option>
+              <option value="광주">광주</option>
+              <option value="대전">대전</option>
+              <option value="울산">울산</option>
+              <option value="세종">세종</option>
+              <option value="경기">경기</option>
+              <option value="강원">강원</option>
+              <option value="충북">충북</option>
+              <option value="충남">충남</option>
+              <option value="전북">전북</option>
+              <option value="전남">전남</option>
+              <option value="경북">경북</option>
+              <option value="경남">경남</option>
+              <option value="제주">제주</option>
+            </select>
+
+            <label for="00NgK000015uK8j">자치구</label>
+            <select
+              id="district"
+              name="00NgK000015uK8j"
+              title="자치구"
+              required
+            >
+              <option value="">--선택--</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="00NgK000015uKLd"
+            >상세주소<span class="required">*</span></label
+          >
+          <input
+            type="text"
+            name="00NgK000015uKLd"
+            maxlength="30"
+            placeholder="상세주소 입력"
+          />
+        </div>
+
+        <div id="child-forms">
+          <!-- 자녀정보 입력 -->
+          <div class="child-form">
+            <div class="section-title-row">
+              <span class="section-title">자녀정보 입력</span>
+              <span class="sub-text"
+                >맞춤 상담을 위해 자녀의 이름과 생년월일을 입력해 주세요.</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="last_name"
+                >자녀 이름<span class="required">*</span></label
+              >
+              <input
+                id="last_name"
+                type="text"
+                name="last_name"
+                maxlength="8"
+                placeholder="자녀 이름 입력"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>자녀 생년월일<span class="required">*</span></label>
+              <input
+                id="00NgK000015uLmM"
+                type="text"
+                name="00NgK000015uLmM"
+                placeholder="8자리 숫자만 입력 예)20170101"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>관심과목<span class="required">*</span></label>
+              <div id="checkbox-subjects">
+                <label><input type="checkbox" value="국어" /> 국어</label><br />
+                <label><input type="checkbox" value="수학" /> 수학</label><br />
+                <label><input type="checkbox" value="영어" /> 영어</label><br />
+                <label><input type="checkbox" value="한자" /> 한자</label><br />
+                <label><input type="checkbox" value="과학" /> 과학</label>
+              </div>
+              <select
+                id="00NgK000015uQsT"
+                multiple="multiple"
+                name="00NgK000015uQsT"
+                title="관심과목"
+                style="display: none"
+              >
+                <option value="국어">국어</option>
+                <option value="수학">수학</option>
+                <option value="영어">영어</option>
+                <option value="한자">한자</option>
+                <option value="과학">과학</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 숨겨진 자녀 폼 (버튼 누르면 보임) -->
+          <div class="child-form hidden" id="second-child-form">
+            <div class="section-title-row">
+              <span class="section-title">추가 자녀 정보 입력</span><br />
+              <span class="sub-text"
+                >맞춤 상담을 위해 자녀의 이름과 생년월일을 입력해 주세요.</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="last_name2">자녀 이름</label>
+              <input
+                id="00NgK0000164J1h"
+                type="text"
+                name="00NgK0000164J1h"
+                maxlength="8"
+                placeholder="자녀 이름 입력"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>자녀 생년월일</label>
+              <input
+                id="00NgK0000164JMf"
+                type="text"
+                name="00NgK0000164JMf"
+                placeholder="8자리 숫자만 입력 예)20170101"
+              />
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="child-toggle-btn"
+          id="toggle-btn"
+          onclick="showSecondChild()"
+        >
+          + 자녀 추가
+        </button>
+
+        <div class="section-title-row">
+          <span class="section-title">약관 동의</span>
+          <span class="sub-text">.</span>
+        </div>
+        <div class="show-box">
+          <!-- 전체동의 -->
+          <div class="term-row">
+            <label class="term-label">
+              <input type="checkbox" id="agree-all" />
+              <span class="term-text">[필수] 전체동의</span>
+            </label>
+          </div>
+
+          <!-- 필수 동의 항목 -->
+          <div class="terms-group">
+            <!-- 14세 이상 -->
+            <div class="term-row" onclick="toggleContent('t1')">
+              <label class="term-label">
+                <input
+                  type="checkbox"
+                  class="required-term"
+                  name="up18__c"
+                  value="1"
+                  required
+                />
+                <span class="term-text"
+                  >[필수] 상담정보 입력자는 만 14세 이상입니다.</span
+                >
+              </label>
+            </div>
+
+            <!-- 개인정보 수집 이용 동의 -->
+            <div class="term-row" onclick="toggleContent('t2')">
+              <label class="term-label">
+                <input
+                  type="checkbox"
+                  class="required-term"
+                  name="PrivacyConsent__c"
+                  value="1"
+                  required
+                />
+                <span class="term-text">[필수] 개인정보 수집 및 이용동의</span>
+              </label>
+              <span>▼</span>
+            </div>
+            <div id="t2" class="toggle-content scroll-box">
+              회사는 회원가입을 위해 아래와 같이 개인정보를 수집 및
+              이용합니다.<br /><br />
+              1. 수집/이용 목적 : 무료상담 신청, 전화·문자 안내, 중복 신청
+              방지<br />
+              2. 수집/이용 항목 : 신청자 이름, 연락처, 주소, 자녀 이름, 자녀
+              생년월일<br />
+              3. 보유 기간 : 무료상담 종료 후 1년 (관련 법령 따름)<br /><br />
+              동의 거부 시 회원가입이 제한됩니다.
+            </div>
+
+            <!-- 만 14세 미만 동의 -->
+            <div class="term-row" onclick="toggleContent('t3')">
+              <label class="term-label">
+                <input
+                  type="checkbox"
+                  class="required-term"
+                  name="under__c"
+                  value="1"
+                  required
+                />
+                <span class="term-text"
+                  >[필수] 만 14세 미만 아동의 개인정보 수집 및 이용에 대한
+                  법정대리인 동의</span
+                >
+              </label>
+              <span>▼</span>
+            </div>
+            <div id="t3" class="toggle-content scroll-box">
+              1. 수집/이용 목적 : 무료상담 신청, 아동 여부 확인<br />
+              2. 항목 : 자녀 이름, 자녀 생년월일<br />
+              3. 보유 기간 : 상담 종료 후 1년<br /><br />
+              동의 거부 시 신청이 제한됩니다.
+            </div>
+          </div>
+
+          <!-- 선택 동의 항목 -->
+          <div class="term-row" onclick="toggleContent('t4')">
+            <label class="term-label">
+              <input type="checkbox" name="MarketingConsent__c" value="1" />
+              <strong>[선택] 마케팅 목적의 개인정보 수집 및 이용 동의</strong>
+            </label>
+            <span>▼</span>
+          </div>
+          <div id="t4" class="toggle-content scroll-box">
+            1. 항목 : 이메일, 휴대폰번호, 주소, 서비스 이용기록<br />
+            2. 이용 목적 : 고객 맞춤 서비스 제공, 이벤트 및 광고성 정보 제공 및
+            참여기획 제공<br />
+            3. 보유 기간 : 고객의 동의 철회 시 또는 회원 탈퇴 시 즉시 파기<br /><br />
+            동의를 거부할 수 있으나, 거부 시 고객 맞춤 서비스 제공,
+            광고성(이벤트) 정보 제공 및 참여 기획이 제한됩니다.
+          </div>
+        </div>
+        <button type="submit">무료상담 신청하기</button>
+      </form>
+    </div>
+    <script src="leadForm.js"></script>
+  </body>
+</html>
