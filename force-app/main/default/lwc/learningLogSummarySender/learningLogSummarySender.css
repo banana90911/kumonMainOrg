@@ -1,0 +1,24 @@
+:host {
+    display: block;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.send-button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.success-text {
+    color: #2e844a;
+    font-weight: 500;
+    margin-top: 1rem;
+    text-align: center;
+}

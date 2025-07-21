@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="📬 학습 요약 이메일 보내기" icon-name="custom:custom63">
+        <div class="slds-var-p-around_medium">
+            <div class="card-description">
+                커몬학습 방문교사가 아동의 학습일지를 요약하여 학부모님께 이메일로 전달합니다.  
+                아래 버튼을 눌러 학습 요약 메일을 전송해 주세요.
+            </div>
+
+            <lightning-button
+                label="📨 이메일 전송하기"
+                variant="brand"
+                onclick={handleSendEmail}
+                disabled={isSending}
+                class="send-button">
+            </lightning-button>
+
+            <template if:true={isSending}>
+                <div class="slds-m-top_small slds-align_absolute-center">
+                    <lightning-spinner alternative-text="Sending..." size="small"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={isSent}>
+                <div class="success-text">
+                    ✨ 이메일이 성공적으로 전송되었습니다!
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
