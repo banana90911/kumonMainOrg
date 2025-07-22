@@ -1,28 +1,36 @@
 <template>
-    <lightning-card title="📬 학습 요약 이메일 보내기" icon-name="custom:custom63">
+    <lightning-card title="📨 학습 요약 이메일 전송" icon-name="custom:custom63">
         <div class="slds-var-p-around_medium">
             <div class="card-description">
-                커몬학습 방문교사가 아동의 학습일지를 요약하여 학부모님께 이메일로 전달합니다.  
-                아래 버튼을 눌러 학습 요약 메일을 전송해 주세요.
+                (っ ᵔ◡ᵔ)っ 아동의 학습일지를 요약하여 학부모님께 이메일로 전달합니다.
             </div>
 
             <lightning-button
-                label="📨 이메일 전송하기"
+                label="이메일 전송"
                 variant="brand"
-                onclick={handleSendEmail}
-                disabled={isSending}
-                class="send-button">
+                onclick={startFlow}
+                disabled={isRunning}>
             </lightning-button>
 
-            <template if:true={isSending}>
+            <template if:true={isRunning}>
                 <div class="slds-m-top_small slds-align_absolute-center">
-                    <lightning-spinner alternative-text="Sending..." size="small"></lightning-spinner>
+                    <lightning-flow
+                        flow-api-name="LearningLogEmail"
+                        flow-input-variables={inputVariables}
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
                 </div>
             </template>
 
-            <template if:true={isSent}>
-                <div class="success-text">
-                    ✨ 이메일이 성공적으로 전송되었습니다!
+            <template if:true={isSuccess}>
+                <div class="slds-m-top_small slds-text-color_success">
+                    *⸜( •ᴗ• )⸝* 이메일 전송이 완료되었습니다.
+                </div>
+            </template>
+
+            <template if:true={isFailure}>
+                <div class="slds-m-top_small slds-text-color_error">
+                    Σ(°△° ꪱꪱꪱ) 이메일 전송에 실패했습니다. 다시 시도해 주세요.
                 </div>
             </template>
         </div>

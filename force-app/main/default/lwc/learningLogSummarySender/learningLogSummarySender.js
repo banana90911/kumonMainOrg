@@ -1,35 +1,38 @@
-import { LightningElement, api } from 'lwc';
-import { FlowNavigationNextEvent } from 'lightning/flowSupport';
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import flowName from '@salesforce/label/c.Send_LearningLogSummaryEmail';
-import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
-import { NavigationMixin } from 'lightning/navigation';
-import { FlowInterview } from 'lightning/flowSupport';
+import { LightningElement, api, track } from 'lwc';
 
-export default class LearningLogSummarySender extends LightningElement {
-    @api recordId; // Contact Id
-    isSending = false;
-    isSent = false;
+export default class LearningLogFlowLauncher extends LightningElement {
+    @api recordId;
+    @track isRunning = false;
+    @track isSuccess = false;
+    @track isFailure = false;
 
-    async handleSendEmail() {
-        this.isSending = true;
-        const flowName = 'Send_LearningLogSummaryEmail';
+    get inputVariables() {
+        return [
+            {
+                name: 'recordId',
+                type: 'String',
+                value: this.recordId
+            }
+        ];
+    }
 
-        const flow = await FlowInterview.create(flowName, {
-            inputVariables: [
-                {
-                    name: 'contactId',
-                    type: 'String',
-                    value: this.recordId
-                }
-            ]
-        });
+    startFlow() {
+        this.isRunning = true;
+        this.isSuccess = false;
+        this.isFailure = false;
+    }
 
-        flow.onDone(() => {
-            this.isSending = false;
-            this.isSent = true;
-        });
+    handleStatusChange(event) {
+        this.isRunning = false;
 
-        await flow.start();
+        if (event.detail.status === 'FINISHED') {
+            this.isSuccess = true;
+        } else if (
+            event.detail.status === 'FAILED' ||
+            event.detail.status === 'ERROR' ||
+            event.detail.status === 'UNKNOWN'
+        ) {
+            this.isFailure = true;
+        }
     }
 }
