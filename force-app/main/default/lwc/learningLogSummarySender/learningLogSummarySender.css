@@ -27,3 +27,9 @@ lightning-button.send-button {
     font-size: 1rem;
     text-align: center;
 }
+
+.slds-text-color_error {
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+}
