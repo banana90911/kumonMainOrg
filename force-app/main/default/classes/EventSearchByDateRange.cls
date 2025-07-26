@@ -1,14 +1,17 @@
 public with sharing class EventSearchByDateRange {
-    
+
     public class Input {
         @InvocableVariable(required=true)
-        public Date startDate;
-
-        @InvocableVariable(required=true)
-        public Date endDate;
+        public Datetime referenceTime;
     }
 
     public class Output {
+        @InvocableVariable
+        public Id eventId;
+
+        @InvocableVariable
+        public String subject;
+
         @InvocableVariable
         public Datetime startDateTime;
 
@@ -16,33 +19,38 @@ public with sharing class EventSearchByDateRange {
         public Datetime endDateTime;
 
         @InvocableVariable
-        public String subject;
+        public String label; // 사용자 응답용
     }
 
-    @InvocableMethod(label='Search Events By Date Range')
-    public static List<List<Output>> searchEvents(List<Input> inputList) {
+    @InvocableMethod(label='Search Today Events By Time')
+    public static List<List<Output>> search(List<Input> inputList) {
         List<Output> results = new List<Output>();
 
-        if (inputList == null || inputList.isEmpty()) {
-            return new List<List<Output>> { results };
-        }
+        if (inputList == null || inputList.isEmpty()) return new List<List<Output>> { results };
 
-        Input criteria = inputList[0];
+        Datetime refTime = inputList[0].referenceTime;
+
+        Date today = refTime.date();
+        Datetime startOfDay = Datetime.newInstance(today, Time.newInstance(0, 0, 0, 0));
+        Datetime endOfDay = Datetime.newInstance(today, Time.newInstance(23, 59, 59, 999));
 
         List<Event> events = [
-            SELECT StartDateTime, EndDateTime, Subject
+            SELECT Id, Subject, StartDateTime, EndDateTime
             FROM Event
-            WHERE StartDateTime >= :criteria.startDate
-              AND EndDateTime <= :criteria.endDate
+            WHERE StartDateTime >= :refTime
+              AND StartDateTime <= :endOfDay
             ORDER BY StartDateTime ASC
         ];
 
         for (Event evt : events) {
-            Output record = new Output();
-            record.startDateTime = evt.StartDateTime;
-            record.endDateTime = evt.EndDateTime;
-            record.subject = evt.Subject;
-            results.add(record);
+            Output o = new Output();
+            o.eventId = evt.Id;
+            o.subject = evt.Subject;
+            o.startDateTime = evt.StartDateTime;
+            o.endDateTime = evt.EndDateTime;
+            o.label = evt.StartDateTime.format('a h:mm', 'ko_KR') + ' ~ ' +
+                      evt.EndDateTime.format('a h:mm', 'ko_KR') + ': ' + evt.Subject;
+            results.add(o);
         }
 
         return new List<List<Output>> { results };

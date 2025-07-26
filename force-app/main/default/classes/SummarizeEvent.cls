@@ -25,11 +25,11 @@ public with sharing class SummarizeEvent {
             LIMIT 1
         ];
 
-        String startStr = evt.StartDateTime.format('yyyy-MM-dd HH:mm');
-        String endStr = evt.EndDateTime.format('HH:mm');
+        String startStr = evt.StartDateTime.format('yyyy년 M월 d일 a h:mm', 'ko_KR');
+        String endStr = evt.EndDateTime.format('a h:mm', 'ko_KR');
 
         Output o = new Output();
-        o.summary = '일정 "' + evt.Subject + '"는 ' + startStr + '부터 ' + endStr + '까지 예정되어 있습니다.';
+        o.summary = '일정 "' + evt.Subject + '"은 ' + startStr + '부터 ' + endStr + '까지 예정되어 있습니다.';
         results.add(o);
 
         return results;

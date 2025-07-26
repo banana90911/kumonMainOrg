@@ -33,31 +33,27 @@ public with sharing class GetParentForChild {
 
         Id contactId = inputs[0].contactId;
 
-        Contact child = [
-            SELECT AccountId
+        List<Contact> contacts = [
+            SELECT Account.Id, Account.Name, Account.Phone, Account.Email__c,
+                   Account.BillingCity, Account.BillingState, Account.BillingStreet
             FROM Contact
-            WHERE Id = :contactId
+            WHERE Id = :contactId AND AccountId != null
             LIMIT 1
         ];
 
-        if (child.AccountId == null) return results;
+        if (!contacts.isEmpty()) {
+            Account parent = contacts[0].Account;
 
-        Account acc = [
-            SELECT Name, Phone, Email__c, CityName__c, State__c, Street__c
-            FROM Account
-            WHERE Id = :child.AccountId
-            LIMIT 1
-        ];
+            Output o = new Output();
+            o.name = parent.Name;
+            o.phone = parent.Phone;
+            o.email = parent.Email__c;
+            o.city = parent.BillingCity;
+            o.state = parent.BillingState;
+            o.street = parent.BillingStreet;
+            results.add(o);
+        }
 
-        Output out = new Output();
-        out.name = acc.Name;
-        out.phone = acc.Phone;
-        out.email = acc.Email__c;
-        out.city = acc.CityName__c;
-        out.state = acc.State__c;
-        out.street = acc.Street__c;
-
-        results.add(out);
         return results;
     }
 }

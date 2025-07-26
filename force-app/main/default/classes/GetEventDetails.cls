@@ -1,5 +1,5 @@
 public with sharing class GetEventDetails {
-    
+
     public class Input {
         @InvocableVariable(required=true)
         public Id eventId;
@@ -14,31 +14,40 @@ public with sharing class GetEventDetails {
 
         @InvocableVariable
         public String subject;
+
+        @InvocableVariable
+        public String label;
     }
 
     @InvocableMethod(label='Get Event Details')
     public static List<Output> getDetails(List<Input> inputs) {
         List<Output> results = new List<Output>();
 
-        if (inputs == null || inputs.isEmpty()) {
-            return results;
-        }
+        if (inputs == null || inputs.isEmpty()) return results;
 
         Id eventId = inputs[0].eventId;
 
-        Event evt = [
+        List<Event> evtList = [
             SELECT StartDateTime, EndDateTime, Subject
             FROM Event
             WHERE Id = :eventId
             LIMIT 1
         ];
 
-        Output result = new Output();
-        result.startDateTime = evt.StartDateTime;
-        result.endDateTime = evt.EndDateTime;
-        result.subject = evt.Subject;
+        if (!evtList.isEmpty()) {
+            Event evt = evtList[0];
+            Output o = new Output();
+            o.startDateTime = evt.StartDateTime;
+            o.endDateTime = evt.EndDateTime;
+            o.subject = evt.Subject;
 
-        results.add(result);
+            String startStr = evt.StartDateTime.format('yyyy년 M월 d일 a h:mm', 'ko_KR');
+            String endStr = evt.EndDateTime.format('a h:mm', 'ko_KR');
+            o.label = startStr + ' ~ ' + endStr + ': ' + evt.Subject;
+
+            results.add(o);
+        }
+
         return results;
     }
 }

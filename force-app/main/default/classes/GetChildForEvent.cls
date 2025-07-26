@@ -1,11 +1,14 @@
 public with sharing class GetChildForEvent {
-    
+
     public class Input {
         @InvocableVariable(required=true)
         public Id eventId;
     }
 
     public class Output {
+        @InvocableVariable
+        public Id contactId;
+
         @InvocableVariable
         public String name;
 
@@ -23,37 +26,36 @@ public with sharing class GetChildForEvent {
     public static List<Output> getChild(List<Input> inputs) {
         List<Output> results = new List<Output>();
 
-        if (inputs == null || inputs.isEmpty()) {
-            return results;
-        }
+        if (inputs == null || inputs.isEmpty()) return results;
 
         Id eventId = inputs[0].eventId;
 
-        Event evt = [
-            SELECT WhoId
+        List<Event> events = [
+            SELECT Id, WhoId
             FROM Event
             WHERE Id = :eventId
             LIMIT 1
         ];
 
-        if (evt.WhoId == null) {
-            return results;
+        if (!events.isEmpty() && events[0].WhoId != null && String.valueOf(events[0].WhoId).startsWith('003')) {
+            Id contactId = events[0].WhoId;
+
+            Contact child = [
+                SELECT Id, Name, BirthDate, Phone, VisitDate__c
+                FROM Contact
+                WHERE Id = :contactId
+                LIMIT 1
+            ];
+
+            Output o = new Output();
+            o.contactId = child.Id;
+            o.name = child.Name;
+            o.birthDate = child.BirthDate;
+            o.phone = child.Phone;
+            o.visitDate = child.VisitDate__c;
+            results.add(o);
         }
 
-        Contact child = [
-            SELECT Name, Birthdate, Phone, VisitDate__c
-            FROM Contact
-            WHERE Id = :evt.WhoId
-            LIMIT 1
-        ];
-
-        Output out = new Output();
-        out.name = child.Name;
-        out.birthDate = child.Birthdate;
-        out.phone = child.Phone;
-        out.visitDate = child.VisitDate__c;
-
-        results.add(out);
         return results;
     }
 }

@@ -69,7 +69,6 @@ public class LeadAssignmentService {
         );
         update leadToUpdate;
 
-        // 👉 비동기 Queue 멤버 추가 호출
         assignTopUsersToQueueAsync(topUserIds, queue.Id);
     }
 
