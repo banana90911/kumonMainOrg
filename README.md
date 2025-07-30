@@ -56,7 +56,8 @@
 
 ## 3️⃣ 프로젝트 프로세스
 ### 🖼 프로세스 다이어그램: 
-<img width="14852" height="8756" alt="Image" src="https://github.com/user-attachments/assets/155d0b4f-74d8-49b7-a676-7b05e1cb0757" />
+<img width="2514" height="1726" alt="Image" src="https://github.com/user-attachments/assets/22b0dac0-c224-4945-9744-adf5e1279b48" />
+
 
 ---
 
