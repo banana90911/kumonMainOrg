@@ -66,7 +66,7 @@
 
 🖼 **ERD 이미지:**
 <br>
-<img width="1431" height="1634" alt="Image" src="https://github.com/user-attachments/assets/a144f23c-eccd-43a8-9e59-68a7373e0d2f" />
+<img width="1766" height="1100" alt="Image" src="https://github.com/user-attachments/assets/9cf86758-ee7c-4555-b463-a054a6811ab6" />
 
 ---
 
