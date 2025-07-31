@@ -1,0 +1,27 @@
+<template>
+    <div class="event-calendar">
+        <!-- 요일 버튼 + 날짜 -->
+        <div class="day-selector">
+            <template for:each={decoratedWeekdays} for:item="day">
+                <button key={day.value} class={day.className} data-value={day.value} onclick={handleDayClick}>
+                    {day.label}
+                </button>
+            </template>
+        </div>
+
+        <!-- 일정 목록 -->
+        <div class="event-list">
+            <template if:true={formattedEvents.length}>
+                <template for:each={formattedEvents} for:item="event">
+                    <div class="event-card" key={event.Id}>
+                        <div class="event-subject">🗓️ {event.Subject}</div>
+                        <div class="event-time">{event.timeRange}</div>
+                    </div>
+                </template>
+            </template>
+            <template if:false={formattedEvents.length}>
+                <div class="no-events">해당 요일에 일정이 없습니다.</div>
+            </template>
+        </div>
+    </div>
+</template>

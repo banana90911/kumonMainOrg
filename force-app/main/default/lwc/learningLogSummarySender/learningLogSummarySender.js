@@ -29,6 +29,7 @@ export default class LearningLogSummarySender extends LightningElement {
         const status = event.detail.status;
 
         if (status === 'FINISHED') {
+            // 🧼 메시지 초기화 (이 타이밍이 가장 안전함)
             this.isSuccess = false;
             this.isFailure = false;
 
@@ -42,6 +43,7 @@ export default class LearningLogSummarySender extends LightningElement {
                 this.isFailure = true;
             }
 
+            // ⏳ 메시지 유지 후 자동 제거 (5초 후)
             setTimeout(() => {
                 this.isSuccess = false;
                 this.isFailure = false;

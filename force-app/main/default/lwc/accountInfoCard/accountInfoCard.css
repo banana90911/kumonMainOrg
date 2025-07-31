@@ -1,0 +1,79 @@
+.account-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.info-section {
+    flex: 1;
+}
+
+.row.six-col {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-pair {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.info-pair label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.info-pair span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 1.2rem;
+}
+
+.icon-large {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+}
+
+.account-name {
+    margin-right: 0.5rem;
+}
+
+.sub-label {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 400;
+}
+
+.child-link {
+    color: #1a73e8;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.child-link:hover {
+    text-decoration: underline;
+}

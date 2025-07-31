@@ -1,0 +1,79 @@
+.container {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.table-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #333;
+}
+
+.member-count {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.table-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ✅ 헤더와 Row 공통 스타일 */
+.table-header,
+.table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 2.5fr 2fr;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #ffffff;
+}
+
+/* ✅ 헤더 스타일 */
+.table-header {
+    background-color: #f1f5fb;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+/* ✅ 헤더와 Row 모두 선 맞춤 */
+.table-header .col,
+.table-row .col {
+    padding: 0 0.5rem;
+    border-right: 1px solid #e0e0e0;
+}
+
+.table-header .col:last-child,
+.table-row .col:last-child {
+    border-right: none;
+}
+
+/* ✅ hover 효과 */
+.table-row:hover {
+    background-color: #f9f9f9;
+}
+
+/* ✅ 자녀 이름 링크 */
+.child-name-link {
+    color: #1a73e8;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0.15rem 0;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    padding: 1rem;
+}

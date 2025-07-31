@@ -8,7 +8,7 @@
         <div class="case-card-wrapper">
             <template for:each={parentCases} for:item="c">
                 <div key={c.Id} class="case-card" data-id={c.Id} onclick={handleCaseClick}>
-                    <div class="case-icon">📝</div>
+                    <div class="case-icon">{c.emoji}</div>
                     <div class="case-details">
                         <p class="case-subject">{c.Subject} <span class="case-type">({c.Type})</span></p>
                         <p class="case-desc">{c.Description}</p>

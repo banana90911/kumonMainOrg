@@ -70,7 +70,8 @@ public with sharing class ContractBatchFlowWrapper {
                 Discount_Rate__c = discountRate,
                 Total_Price__c = discountedTotal,
                 Name = '계약 - ' + Date.today().format(),
-                Status = 'Draft'
+                Status = 'Draft',
+                CustomerSignedId = contactId
             );
             if (matchedCampaign != null) {
                 contract.Campaign__c = matchedCampaign.Id;

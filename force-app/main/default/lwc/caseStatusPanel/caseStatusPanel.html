@@ -1,0 +1,57 @@
+<template>
+    <div class="panel">
+
+        <!-- 문의 접수 -->
+        <template if:true={isNew}>
+            <div class="box box-info">
+                <p class="headline">📌 담당자 지정 안내</p>
+                <p>문의 확인 완료!</p>
+                <p class="highlight">✅ 처리를 시작하실 경우, <strong>진행상황을 ‘문의 진행’</strong>으로 변경해주세요.</p>
+            </div>
+        </template>
+
+        <!-- 문의 진행 -->
+        <template if:true={isWorking}>
+            <div class="box box-working">
+                <p class="headline">📞 고객 정보</p>
+                <p>👤 고객명: {customerName}</p>
+                <p>📱 연락처: {customerPhone}</p>
+                <p>✉️ 이메일: {customerEmail}</p>
+
+                <!-- 안내 메시지 -->
+                <div class="working-guide">
+                    🧭 <strong>안내:</strong> 고객이 안심할 수 있도록, 문의 처리 상황을 자주 안내해주세요.<br />
+                    처리 예정일이나 확인된 내용을 함께 전달하면 신뢰와 만족도가 높아집니다.
+                </div>
+
+                <div class="btns">
+                    <lightning-button label="전화하기" onclick={handleCall}></lightning-button>
+                    <lightning-button label="진행 상황 알리기" onclick={handleSendProgressEmail}
+                        class="slds-m-left_small"></lightning-button>
+                </div>
+            </div>
+        </template>
+
+        <!-- 처리 완료 -->
+        <template if:true={isClosed}>
+            <div class="box box-done">
+                <p class="headline">🎉 문의가 성공적으로 처리되었습니다.</p>
+
+                <!-- 안내 문구 추가 -->
+                <p class="done-guide">
+                    📢 고객에게 처리 완료 사실을 알려주시고,<br />
+                    만족도 조사를 통해 피드백도 받아보세요.
+                </p>
+
+                <div class="btns">
+                    <lightning-button label="완료 알림 보내기" onclick={handleSendCompletionNotice}></lightning-button>
+                    <lightning-button label="만족도 조사 요청" onclick={handleSendFeedbackRequest}
+                        class="slds-m-left_small"></lightning-button>
+                </div>
+            </div>
+        </template>
+
+
+
+    </div>
+</template>

@@ -1,0 +1,73 @@
+<apex:page standardController="Quote" renderAs="pdf">
+  <!-- 외부 CSS 연결 -->
+  <apex:stylesheet value="{!URLFOR($Resource.QuotePDFStyles)}"/>
+
+  <!-- 로고 -->
+  <div class="logo">
+    <img src="{!URLFOR($Resource.ComeonLogo)}" width="100" alt="커몬학습 로고"/>
+  </div>
+
+  <h1>계약서</h1>
+
+  <div class="section-title">Contract Summary</div>
+  <table>
+    <tr><th>Quote Name</th><td>{!Quote.Name}</td></tr>
+    <tr>
+      <th>Contract Info</th>
+      <td>
+        <apex:outputText value="{0,date,yyyy-MM-dd}">
+          <apex:param value="{!Quote.ContractDate__c}"/>
+        </apex:outputText>
+      </td>
+    </tr>
+  </table>
+
+  <div class="section-title">Customer</div>
+  <table>
+    <tr><th>Account Name</th><td>{!Quote.AccountName__c}</td></tr>
+    <tr><th>Phone</th><td>{!Quote.Phone}</td></tr>
+    <tr><th>Email</th><td>{!Quote.Email}</td></tr>
+    <tr><th>Child Name</th><td>{!Quote.ChildName__c}</td></tr>
+    <tr>
+      <th>Chile Birthdate</th>
+      <td>
+        <apex:outputText value="{0,date,yyyy-MM-dd}">
+          <apex:param value="{!Quote.ChildBirth__c}"/>
+        </apex:outputText>
+      </td>
+    </tr>
+  </table>
+
+  <div class="section-title">Course</div>
+  <table>
+    <tr>
+      <th>Course Description</th>
+      <th class="numeric">Original Total</th>
+      <th class="numeric">Number</th>
+    </tr>
+    <apex:repeat value="{!Quote.QuoteLineItems}" var="qli">
+      <tr>
+        <td>{!qli.Description}</td>
+        <td class="numeric">₩ {!qli.UnitPrice}</td>
+        <td class="numeric">{!qli.Quantity}</td>
+      </tr>
+    </apex:repeat>
+  </table>
+
+  <div class="section-title">Payment</div>
+  <table>
+    <tr>
+      <th class="numeric">Original Total</th>
+      <th class="numeric">Discount Rate</th>
+      <th class="numeric">Final Total</th>
+    </tr>
+    <tr>
+      <td class="numeric">₩ {!Quote.OriginalTotal__c}</td>
+      <td class="numeric">{!Quote.DiscountRate__c} %</td>
+      <td class="numeric">₩ {!Quote.TotalPrice__c}</td>
+    </tr>
+  </table>
+<table style="width: 100%; font-size: 9pt; margin-top: 0px; border: none;">
+
+</table>
+</apex:page>

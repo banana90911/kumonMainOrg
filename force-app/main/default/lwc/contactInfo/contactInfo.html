@@ -1,0 +1,48 @@
+<template>
+    <div class="child-card">
+        <div class="header">
+            <span class="emoji">👶</span>
+            <span class="child-name">
+                {childName}
+                <span class="sub-label">아동</span>
+            </span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">🎂 생년월일:</span>
+            <span class="value">{birthdate}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">📅 나이:</span>
+            <span class="value">{age}세</span>
+        </div>
+
+        <template if:true={subjectString}>
+            <div class="info-row">
+                <span class="label">📘 듣는 과목:</span>
+                <span class="value">{subjectString}</span>
+            </div>
+        </template>
+
+        <!-- ✅ 학부모 -->
+        <template if:true={parentName}>
+            <div class="info-row">
+                <span class="label">👨‍👩‍👧 학부모:</span>
+                <span class="value">
+                    <a href={parentUrl} target="_blank" class="link">{parentName}</a>
+                </span>
+            </div>
+        </template>
+
+        <!-- ✅ 담당교사 -->
+        <template if:true={teacherName}>
+            <div class="info-row">
+                <span class="label">👨‍🏫 담당교사:</span>
+                <span class="value">
+                    <a href={teacherUrl} target="_blank" class="link">{teacherName}</a>
+                </span>
+            </div>
+        </template>
+    </div>
+</template>

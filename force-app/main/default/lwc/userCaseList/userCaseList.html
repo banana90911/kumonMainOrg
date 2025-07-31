@@ -1,0 +1,20 @@
+<template>
+    <div class="case-card">
+        <h2 class="section-title">📂 나의 문의 목록</h2>
+
+        <template if:true={cases.length}>
+            <template for:each={cases} for:item="c">
+                <div key={c.Id} class="case-item" data-id={c.Id} onclick={handleClick}>
+                    <p class="case-title">📝 <strong>{c.Subject}</strong></p>
+                    <p>📌 유형: {c.Type}</p>
+                    <p>👨‍👩‍👧 학부모: {c.AccountName__c}</p>
+                    <p class="description">💬 내용: {c.Description}</p>
+                </div>
+            </template>
+        </template>
+
+        <template if:true={isEmpty}>
+            <p class="empty-text">등록된 문의가 없습니다.</p>
+        </template>
+    </div>
+</template>

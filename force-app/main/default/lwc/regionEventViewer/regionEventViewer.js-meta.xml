@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>59.0</apiVersion> <!-- 네 org의 최신버전에 맞게 수정 가능 -->
+  <isExposed>true</isExposed>
+  <targets>
+    <target>lightning__RecordPage</target>
+    <target>lightning__AppPage</target>
+    <target>lightning__HomePage</target>
+  </targets>
+</LightningComponentBundle>

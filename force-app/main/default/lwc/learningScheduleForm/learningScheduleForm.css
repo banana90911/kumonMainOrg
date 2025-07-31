@@ -1,0 +1,49 @@
+/* learningScheduleForm.css */
+.form-card {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.child-info {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.label-sub {
+  font-size: 0.9rem;
+  color: #888;
+  margin-left: 6px;
+}
+
+.field {
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.icon {
+  margin-right: 4px;
+}
+
+.value {
+  font-weight: 600;
+}
+
+.form-section lightning-combobox,
+.form-section lightning-input {
+  margin-bottom: 14px;
+  display: block;
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: right;
+}

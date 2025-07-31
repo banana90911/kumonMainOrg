@@ -1,0 +1,92 @@
+.event-calendar {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.day-selector {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5등분 유지 */
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    /* ⭐ 버튼 길이 제한 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.day-button {
+    width: 100%;
+    padding: 8px 0;
+    /* ⭐ 위아래만 padding, 좌우 제거 */
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #f6f8fc, #e9eff8);
+    color: #333;
+    border: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.day-button:hover {
+    background: linear-gradient(to bottom right, #e6f0ff, #d4e4ff);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.day-button.selected {
+    background-color: #5b8def;
+    /* 연한 파랑 유지 */
+    color: #102040;
+    /* ✅ 흰색보다 진한 텍스트 */
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(91, 141, 239, 0.3);
+}
+
+/* 클릭하거나 포커스될 때에도 진하게 유지 */
+.day-button.selected:focus,
+.day-button.selected:active {
+    background-color: #1e4db7;
+    /* ✅ 더 눌린 느낌의 톤 다운 */
+    color: #102040;
+    box-shadow: 0 0 0 2px rgba(30, 77, 183, 0.4);
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event-card {
+    background-color: #ffffff;
+    border-left: 4px solid #5b8def;
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.event-subject {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.event-time {
+    color: #666;
+    font-size: 14px;
+}
+
+.no-events {
+    text-align: center;
+    color: #aaa;
+    padding: 20px;
+    font-style: italic;
+}

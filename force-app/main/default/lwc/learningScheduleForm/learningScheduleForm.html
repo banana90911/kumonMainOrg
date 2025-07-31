@@ -1,0 +1,35 @@
+<template>
+  <div class="form-card">
+    <div class="child-info">
+      <div class="section-title">
+        <span class="emoji">🏫</span> 방문 일정 생성
+      </div>
+    </div>
+
+    <div class="form-section">
+      <lightning-combobox name="product" label="과정명" value={selectedProductId} options={productOptions}
+        onchange={handleProductChange}>
+      </lightning-combobox>
+
+      <lightning-combobox name="weekday" label="수업 요일" value={selectedWeekday} options={weekdayOptions}
+        onchange={handleWeekdayChange}>
+      </lightning-combobox>
+
+      <lightning-combobox name="startTime" label="🧭수업 시작 시간" value={selectedStartTime} options={timeSlotOptions}
+        onchange={handleStartTimeChange}>
+      </lightning-combobox>
+
+      <lightning-combobox name="endTime" label="수업 종료 시간" value={selectedEndTime} options={timeSlotOptions}
+        onchange={handleEndTimeChange}>
+      </lightning-combobox>
+
+      <lightning-input type="date" label="반복 종료일 (선택)" value={repeatUntil} onchange={handleRepeatUntilChange}>
+      </lightning-input>
+
+      <div class="button-container">
+        <lightning-button variant="brand" label="일정 생성" onclick={handleCreateSchedule}>
+        </lightning-button>
+      </div>
+    </div>
+  </div>
+</template>

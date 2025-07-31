@@ -1,0 +1,57 @@
+<apex:page standardController="Quote" renderAs="pdf" showHeader="false">
+
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 10pt; line-height: 1.5; }
+    h1 { text-align: center; font-size: 16pt; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 6px; }
+    th { background-color: #f2f2f2; }
+    .numeric { text-align: right; }
+    .section-title { margin-top: 20px; font-weight: bold; font-size: 12pt; }
+    .footer-note { font-size: 9pt; margin-top: 20px; }
+  </style>
+
+  <h1>계약서</h1>
+
+  <div class="section-title">계약서 정보</div>
+  <table>
+    <tr><th>계약서 번호</th><td>{!Quote.Name}</td></tr>
+    <tr><th>계약 일자</th><td><apex:outputText value="{0,date,yyyy-MM-dd}"><apex:param value="{!Quote.ContractDate__c}"/></apex:outputText></td></tr>
+  </table>
+
+  <div class="section-title">고객사항</div>
+  <table>
+    <tr><th>계약자명</th><td>{!Quote.AccountName__c}</td><th>이메일</th><td>{!Quote.Email}</td></tr>
+    <tr><th>전화번호</th><td>{!Quote.Phone}</td><th>주소</th><td>{!Quote.AccountAddress__c}</td></tr>
+    <tr><th>아동 이름</th><td>{!Quote.ChildName__c}</td><th>생년월일</th><td><apex:outputText value="{0,date,yyyy-MM-dd}"><apex:param value="{!Quote.ChildBirth__c}"/></apex:outputText></td></tr>
+  </table>
+
+  <div class="section-title">커몬학습 신청 과정</div>
+  <table>
+    <tr><th>과정 설명</th><th class="numeric">단가</th><th class="numeric">수량</th></tr>
+    <apex:repeat value="{!Quote.QuoteLineItems}" var="qli">
+      <tr>
+        <td>{!qli.Description}</td>
+        <td class="numeric">₩ {!qli.UnitPrice}</td>
+        <td class="numeric">{!qli.Quantity}</td>
+      </tr>
+    </apex:repeat>
+  </table>
+
+  <div class="section-title">결제 사항</div>
+  <table>
+    <tr><th class="numeric">정가 총액</th><th class="numeric">할인율</th><th class="numeric">최종 금액</th></tr>
+    <tr>
+      <td class="numeric">₩ {!Quote.OriginalTotal__c}</td>
+      <td class="numeric">{!Quote.DiscountRate__c}%</td>
+      <td class="numeric">₩ {!Quote.TotalPrice__c}</td>
+    </tr>
+  </table>
+
+  <div class="footer-note">
+    ※ 본 견적서는 커몬학습 구독 서비스를 신청하고자 하는 고객에게 제공되는 확인용 문서입니다.<br/>
+    ※ 구독 서비스에 대한 계약서는 계약 확정 이후 발행되는 문서입니다.<br/>
+    ※ 기타 문의는 커몬학습 고객센터로 연락 주시기 바랍니다.
+  </div>
+
+</apex:page>

@@ -1,0 +1,45 @@
+<template>
+    <template if:true={accountList}>
+        <div class="container">
+            <h2 class="table-title">나의 회원 정보</h2>
+            <p class="member-count">총 회원 {accountList.length}명</p>
+
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <span class="col name">🧑‍🤝‍🧑 이름</span>
+                    <span class="col phone">📞 연락처</span>
+                    <span class="col address">🏡 주소</span>
+                    <span class="col child">👶 자녀</span>
+                </div>
+
+                <template for:each={accountList} for:item="wrapper">
+                    <div key={wrapper.account.Id} class="table-row clickable" data-id={wrapper.account.Id}
+                        onclick={handleAccountClick}>
+                        <span class="col name">{wrapper.account.Name}</span>
+                        <span class="col phone">{wrapper.account.Phone}</span>
+                        <span class="col address">
+                            {wrapper.account.CityName__c} {wrapper.account.State__c} {wrapper.account.Street__c}
+                        </span>
+                        <span class="col child">
+                            <template if:true={wrapper.children}>
+                                <template for:each={wrapper.children} for:item="child">
+                                    <div key={child.Id} class="child-name-link" data-id={child.Id}
+                                        onclick={handleChildClick}>
+                                        {child.ChildName__c}
+                                    </div>
+                                </template>
+                            </template>
+                            <template if:false={wrapper.children}>
+                                -
+                            </template>
+                        </span>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={error}>
+        <p class="error">❗ 데이터를 불러오는 데 실패했습니다.</p>
+    </template>
+</template>

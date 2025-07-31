@@ -1,0 +1,23 @@
+<template>
+    <div class="status-panel">
+        <!-- 현재 상태 뱃지 -->
+        <div class={computedStatusClass}>
+            <lightning-icon icon-name="utility:record_update" size="x-small" class="status-icon"></lightning-icon>
+            <span class="label">현재 진행상황:</span>
+            <span class="value">{currentStatusLabel}</span>
+        </div>
+
+
+        <!-- 변경 영역 -->
+        <div class="update-section">
+            <lightning-combobox name="status" label="문의 진행상황 변경" value={selectedStatus} options={statusOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <div class="button-wrap">
+                <lightning-button label="변경" variant="brand" onclick={handleUpdate}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

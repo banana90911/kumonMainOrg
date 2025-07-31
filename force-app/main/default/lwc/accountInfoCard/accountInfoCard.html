@@ -1,0 +1,50 @@
+<template>
+    <template if:true={hasData}>
+        <div class="account-card">
+            <div class="content-wrapper">
+                <!-- 👤 학부모 정보 -->
+                <div class="info-section">
+                    <div class="card-header">
+                        <span class="icon-large">👨‍👩‍👧</span>
+                        <span class="account-name">{name}</span>
+                        <span class="sub-label">학부모</span>
+                    </div>
+
+                    <!-- 한 줄 6개: 연락처 ~ 아동 -->
+                    <div class="row six-col">
+                        <div class="info-pair">
+                            <label>📞 연락처</label>
+                            <span>{phone}</span>
+                        </div>
+                        <div class="info-pair">
+                            <label>📧 이메일</label>
+                            <span>{email}</span>
+                        </div>
+                        <div class="info-pair">
+                            <label>🌐 지역</label>
+                            <span>{city}</span>
+                        </div>
+                        <div class="info-pair">
+                            <label>🗺️ 자치구</label>
+                            <span>{state}</span>
+                        </div>
+                        <div class="info-pair">
+                            <label>📍 상세주소</label>
+                            <span>{street}</span>
+                        </div>
+                        <div class="info-pair">
+                            <label>🧒 아동 이름</label>
+                            <span class="child-link" onclick={handleChildClick}>
+                                {childName}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template if:false={hasData}>
+        <p style="text-align: center; color: #888;">불러올 학부모 정보가 없습니다.</p>
+    </template>
+</template>

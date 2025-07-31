@@ -1,0 +1,153 @@
+.panel {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 0.75rem;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    background-color: #f7f9fc;
+    border-radius: 0.75rem;
+}
+
+.box {
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 문의 접수 */
+.box-info {
+    background-color: #e8f4fd;
+    position: relative;
+}
+
+.box-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #1b85d2;
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+}
+
+/* 문의 진행 */
+.box-working {
+    background-color: #fff8f2;
+    position: relative;
+}
+
+.box-working::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #e67e22;
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+}
+
+.box-working .headline {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #c55b0b;
+    margin-bottom: 0.5rem;
+}
+
+.box-working p {
+    margin: 0.2rem 0;
+    font-size: 14px;
+    color: #5c3b1e;
+    line-height: 1.6;
+}
+
+.box-working .btns {
+    margin-top: 0.8rem;
+    text-align: right;
+}
+
+.box-working lightning-button {
+    --slds-c-button-brand-color-background: #f2f2f2;
+    --slds-c-button-brand-color-border: #ccc;
+    --slds-c-button-text-color: #5c3b1e;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+/* 처리 완료 */
+.box-done {
+    background-color: #e7f6ee;
+    border-radius: 0.6rem;
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    color: #2e7d32;
+}
+
+.box-done::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #2ecc71;
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+}
+
+.box-done .headline {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #1e5635;
+}
+
+.box-done .btns {
+    margin-top: 0.8rem;
+    text-align: right;
+}
+
+.box-done lightning-button {
+    --slds-c-button-text-color: #2e7d32;
+    /* ✅ 초록 텍스트 */
+    --slds-c-button-color-background: #ffffff;
+    /* 흰 배경 */
+    --slds-c-button-border-color: #2ecc71;
+    /* 초록 테두리 */
+    font-weight: 600;
+    border-radius: 0.4rem;
+    margin-left: 0.4rem;
+    /* ✅ 간격 중복 제거 */
+}
+
+/* 안내 문구 (공통) – 배경 및 테두리 제거 */
+.highlight,
+.working-guide,
+.done-guide {
+    background: none;
+    border: none;
+    padding: 0.5rem 0 0.2rem;
+    font-size: 13.5px;
+    color: inherit;
+    line-height: 1.6;
+}
+
+.highlight strong,
+.working-guide strong,
+.done-guide strong {
+    color: inherit;
+}
+
+.headline {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #2c3e50;
+}

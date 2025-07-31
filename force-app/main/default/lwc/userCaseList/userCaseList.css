@@ -1,0 +1,53 @@
+.case-card {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #222;
+}
+
+.case-item {
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.case-item p.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* ✅ 최대 2줄로 제한 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+.case-item:hover {
+    background: #f5f9ff;
+}
+
+.case-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.empty-text {
+    color: #999;
+    font-style: italic;
+    padding-top: 12px;
+}

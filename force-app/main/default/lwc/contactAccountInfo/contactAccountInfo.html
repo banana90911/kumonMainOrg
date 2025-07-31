@@ -1,0 +1,46 @@
+<template>
+    <div class="account-card">
+        <div class="card-header">
+            <span class="icon-large">👨‍👩‍👧</span>
+            <span class="parent-title">
+                {account.name}
+                <span class="sub-label">학부모</span>
+            </span>
+        </div>
+
+
+        <div class="info-row">
+            <span class="icon">📧</span>
+            <span class="label">이메일:</span>
+            <span class="value">{account.email}</span>
+        </div>
+        <div class="divider"></div>
+
+        <div class="info-row">
+            <span class="icon">📞</span>
+            <span class="label">연락처:</span>
+            <span class="value">{account.phone}</span>
+        </div>
+        <div class="divider"></div>
+
+        <div class="info-row">
+            <span class="icon">📍</span>
+            <span class="label">주소:</span>
+            <span class="value">{account.city} {account.state}, {account.street}</span>
+        </div>
+        <div class="divider"></div>
+
+        <div class="info-row">
+            <span class="icon">🛡️</span>
+            <span class="label">개인정보 동의:</span>
+            <span class="value">{privacyConsentText}</span>
+        </div>
+        <div class="divider"></div>
+
+        <div class="info-row">
+            <span class="icon">📢</span>
+            <span class="label">마케팅 동의:</span>
+            <span class="value">{marketingConsentText}</span>
+        </div>
+    </div>
+</template>

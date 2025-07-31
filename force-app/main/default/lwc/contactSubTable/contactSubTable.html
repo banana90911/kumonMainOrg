@@ -1,0 +1,35 @@
+<template>
+    <template if:true={subscriptions}>
+        <lightning-card title="학습 과정 목록">
+            <div class="table-wrapper">
+                <div class="slds-p-around_medium">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">과정명</th>
+                                <th scope="col">개월수</th>
+                                <th scope="col">구독 시작일</th>
+                                <th scope="col">구독 종료일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={subscriptions} for:item="sub">
+                                <tr key={sub.Id} data-id={sub.Id} onclick={handleRowClick} class="clickable-row">
+                                    <td>
+                                        <a onclick={handleRowClick} data-id={sub.Id}>{sub.ProductId__r.Name}</a>
+                                    </td>
+                                    <td>{sub.Term__c}</td>
+                                    <td>{sub.StartDate__c}</td>
+                                    <td>{sub.EndDate__c}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:true={error}>
+        <p class="slds-text-color_error">에러가 발생했습니다: {error}</p>
+    </template>
+</template>

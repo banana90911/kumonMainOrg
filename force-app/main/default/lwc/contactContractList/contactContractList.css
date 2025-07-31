@@ -1,0 +1,75 @@
+.contract-section {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* 2개씩 정렬 */
+.contract-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+}
+
+.contract-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contract-card p {
+    justify-content: space-between;
+    margin: 0.4rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.label {
+    text-align: left;
+    color: #5d6d7e;
+    font-weight: 500;
+    min-width: 100px;
+    text-align: right;
+}
+
+.value {
+    text-align: right;
+    color: #2c3e50;
+    font-weight: 400;
+    flex: 1;
+    min-width: 80px;
+}
+
+.important {
+    font-weight: 600;
+    color: #2e7d32;
+    text-align: right;
+}
+
+.no-contracts {
+    background-color: #fcfcfc;
+    border: 1px dashed #ccc;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1rem;
+}

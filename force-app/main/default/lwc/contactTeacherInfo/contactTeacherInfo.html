@@ -1,0 +1,27 @@
+<template>
+    <template if:true={hasTeacher}>
+        <div class="teacher-card">
+            <div class="teacher-header">
+                <span class="emoji">🧑‍🏫</span>
+                <div class="name-box">
+                    <span class="name">{teacher.Name} <span class="role">담당교사</span></span>
+                </div>
+            </div>
+
+
+            <div class="info-row">
+                <span class="icon">📧</span>
+                <span class="label">이메일:</span>
+                <span class="value">{teacher.Email}</span>
+            </div>
+            <div class="info-row">
+                <span class="icon">📞</span>
+                <span class="label">전화번호:</span>
+                <span class="value">{teacher.Phone}</span>
+            </div>
+        </div>
+    </template>
+    <template if:false={hasTeacher}>
+        <div class="no-teacher">담당 방문교사 정보가 없습니다.</div>
+    </template>
+</template>

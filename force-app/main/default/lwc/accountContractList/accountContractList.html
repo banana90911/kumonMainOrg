@@ -1,0 +1,42 @@
+<template>
+    <template if:true={contracts.length}>
+        <div class="contract-section">
+            <div class="section-title">📄 계약 정보</div>
+
+            <div class="contract-grid">
+                <template for:each={contracts} for:item="con">
+                    <div key={con.Id} class="contract-card">
+                        <p>
+                            <span class="label">📅 계약일:</span>
+                            <span class="value">{con.StartDate}</span>
+                        </p>
+
+                        <p>
+                            <span class="label">💰 정가 총합계:</span>
+                            <span class="value">{con.formattedOriginalAmount}원</span>
+                        </p>
+
+                        <p>
+                            <span class="label">🏷️ 프로모션:</span>
+                            <span class="value">{con.promoName}</span>
+                        </p>
+
+                        <p>
+                            <span class="label">🔻 할인율:</span>
+                            <span class="value">{con.Discount_Rate__c}%</span>
+                        </p>
+
+                        <p>
+                            <span class="label">💳 총 결제금액:</span>
+                            <span class="value important">{con.formattedTotalPrice}원</span>
+                        </p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </template>
+
+    <template if:false={contracts.length}>
+        <div class="no-contracts">계약 정보가 없습니다.</div>
+    </template>
+</template>

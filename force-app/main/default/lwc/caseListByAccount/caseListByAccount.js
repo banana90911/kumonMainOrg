@@ -22,7 +22,10 @@ export default class CaseListByAccount extends NavigationMixin(LightningElement)
     @wire(getParentCases, { accountId: '$accountId' })
     wiredParentCases({ error, data }) {
         if (data) {
-            this.parentCases = data;
+            this.parentCases = data.map(c => ({
+                ...c,
+                emoji: this.getEmoji(c.Type)
+            }));
         } else if (error) {
             console.error('❌ 문의 내역 조회 오류:', error);
         }
@@ -39,5 +42,22 @@ export default class CaseListByAccount extends NavigationMixin(LightningElement)
                 actionName: 'view'
             }
         });
+    }
+
+    getEmoji(type) {
+        switch (type) {
+            case '학습/평가':
+                return '🎓';
+            case '태블릿':
+                return '📱';
+            case '결제':
+                return '💳';
+            case '기타':
+                return '🗂️';
+            case '시스템장애':
+                return '🛠️';
+            default:
+                return '❓';
+        }
     }
 }
