@@ -99,9 +99,10 @@
 
 **Omni-Channel 라우팅**: 스코어가 가장 높은 교사에게 리드 수락 기회를 제공. 교사는 웹 환경에서 리드를 실시간 수락할 수 있음  
 
-https://github.com/user-attachments/assets/451a140f-c008-453a-a64e-38d4d89b4397
-
 **모바일 최적화된 리드 전환 프로세스**: 모바일에서도 교사가 리드 확인 후 바로 전환 → 계약 → 구독 내역 전송까지 원클릭 처리  
+
+**영상: Web-to-Lead -> 리드 자동 배정 -> 리드 전환**
+https://github.com/user-attachments/assets/41169ca6-856e-496f-9c3a-bf816f51b833
 
 <br>
 
