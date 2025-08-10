@@ -109,7 +109,7 @@ https://github.com/user-attachments/assets/41169ca6-856e-496f-9c3a-bf816f51b833
 
 **영상: 구독내역 → 계약 생성 → 계약서 생성 및 자동 이메일 전송**
 
-https://github.com/user-attachments/assets/65524979-f30a-4517-9c0d-1413c32cde77
+https://github.com/user-attachments/assets/2d6dfd74-0de6-4e27-b1d4-aaad1dce6050
 
 <br>
 
