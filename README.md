@@ -127,11 +127,30 @@ https://github.com/user-attachments/assets/2d6dfd74-0de6-4e27-b1d4-aaad1dce6050
 
 **Salesforce Calendar 연동**: 등록된 일정은 Salesforce Calendar에서 교사별로 자동 집계 및 조회 가능  
 
+<br>
+
+**📽영상: 방문일정 생성**
+
+<!-- Failed to upload "CreateSchedule.mp4" -->
+
 **학습일지 입력 컴포넌트 (LWC)**: 선택형 입력(픽리스트) 기반으로 오류 및 누락 방지. 작성된 일지는 아동 구독과 연동  
+
+**이메일 생성 및 발송 버튼**: 학부모 요청 시, 아동의 학습일지와 프롬프트를 사용하여 아동의 학습현황과 분석 내용을 학부모에게 이메일 자동 전송
+
+<br>
+
+**📽영상: 학습일지 생성 및 아동 학습 현황 자동 이메일 전송**
+
+https://github.com/user-attachments/assets/fe81c5cb-abf1-42d9-afef-fc71308b1661
 
 **Agentforce 요약 기능**: 교사는 Agentforce에 "오늘 일정 알려줘" 또는 "태하 학습 요약 보여줘" 요청 시, 학습일지 요약 응답 수신  
 
-**AI 이메일 발송 버튼**: 학부모 요청 시, 최신 학습 요약 이메일 자동 전송
+<br>
+
+**📽영상: 방문일정 생성**
+
+https://github.com/user-attachments/assets/0cc0660d-6bcc-4b33-8ceb-e0c1ad006229
+
 
 <br>
 
