@@ -107,6 +107,8 @@
 
 https://github.com/user-attachments/assets/41169ca6-856e-496f-9c3a-bf816f51b833
 
+<br>
+
 **원클릭 계약 및 계약서 생성**: 불필요한 과정 필요 없이 아동 페이지에서 원클릭으로 계약 생성. 계약 페이지에서 계약서 생성 후 학부모에게 아동 구독 정보 자동 이메일 전송.
 
 <br>
@@ -114,6 +116,16 @@ https://github.com/user-attachments/assets/41169ca6-856e-496f-9c3a-bf816f51b833
 **📽영상: 구독내역 → 계약 생성 → 계약서 생성 및 자동 이메일 전송**
 
 https://github.com/user-attachments/assets/2d6dfd74-0de6-4e27-b1d4-aaad1dce6050
+
+<br>
+
+**지사담당자 홈페이지**: 지사담당자는 홈페이지에서 계약에 관한 통계 대시보드와 담당하는 교사들의 일정을 한 눈에 파악할 수 있다.
+
+<br>
+
+**📽영상: 지사담당자 홈페이지**
+
+https://github.com/user-attachments/assets/559df773-4770-4fc5-936b-0f016da57b8f
 
 <br>
 
@@ -131,7 +143,9 @@ https://github.com/user-attachments/assets/2d6dfd74-0de6-4e27-b1d4-aaad1dce6050
 
 **📽영상: 방문일정 생성**
 
-<!-- Failed to upload "CreateSchedule.mp4" -->
+https://github.com/user-attachments/assets/431f5042-cfed-49b4-abd8-cc285a21c622
+
+<br>
 
 **학습일지 입력 컴포넌트 (LWC)**: 선택형 입력(픽리스트) 기반으로 오류 및 누락 방지. 작성된 일지는 아동 구독과 연동  
 
@@ -143,6 +157,8 @@ https://github.com/user-attachments/assets/2d6dfd74-0de6-4e27-b1d4-aaad1dce6050
 
 https://github.com/user-attachments/assets/fe81c5cb-abf1-42d9-afef-fc71308b1661
 
+<br>
+
 **Agentforce 요약 기능**: 교사는 Agentforce에 "오늘 일정 알려줘" 또는 "태하 학습 요약 보여줘" 요청 시, 학습일지 요약 응답 수신  
 
 <br>
@@ -150,7 +166,6 @@ https://github.com/user-attachments/assets/fe81c5cb-abf1-42d9-afef-fc71308b1661
 **📽영상: 방문일정 생성**
 
 https://github.com/user-attachments/assets/0cc0660d-6bcc-4b33-8ceb-e0c1ad006229
-
 
 <br>
 
@@ -170,6 +185,13 @@ https://github.com/user-attachments/assets/0cc0660d-6bcc-4b33-8ceb-e0c1ad006229
 
 **케이스 관리 뷰 구성 (LWC)**: 담당 교사 및 지사 담당자는 케이스 목록, 학부모, 아동 정보를 연결해 통합 조회 가능  
 
+<br>
+
+**📽영상: 챗봇(학습 현황, 추천 과목, 문의)**
+
+https://github.com/user-attachments/assets/e28b72fb-8106-482c-9b1c-c100410a56b2
+
+<br>
 
 ---
 
